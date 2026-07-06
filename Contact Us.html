@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Kian Associated Advocates</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#f3f1eb', // Light beige background
+                            navy: '#1d2736', // Deep navy blue
+                            gold: '#b2955f', // Gold accent
+                            gray: '#6b7280', // Text gray
+                            light: '#ffffff',
+                            dark: '#151c27'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f3f1eb;
+            color: #333;
+        }
+        
+        /* Map aesthetics integration */
+        .map-container iframe {
+            filter: grayscale(20%) contrast(90%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 selection:bg-brand-gold selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 w-full py-6 px-4 md:px-12 flex items-center justify-between z-50 text-white">
+        <div class="flex items-center gap-2">
+            <i data-lucide="scale" class="text-white w-6 h-6"></i>
+            <span class="font-serif font-bold text-xl tracking-wide">Kian<span class="font-sans font-normal text-sm block -mt-1 text-gray-300 tracking-wider">ASSOCIATED ADVOCATES</span></span>
+        </div>
+        
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="Homepage.html" class="hover:text-brand-gold transition-colors">Home</a>
+            <a href="About Us.html" class="hover:text-brand-gold transition-colors">About Us</a>
+            <a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Services</a>
+            <a href="Documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a>
+            <a href="Contact Us.html" class="text-brand-gold transition-colors">Contact</a>
+        </nav>
+
+        <button class="md:hidden text-white">
+            <i data-lucide="menu"></i>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative w-full pt-40 pb-24 px-4 md:px-12 bg-brand-navy flex flex-col md:flex-row items-center justify-between overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Lady Justice Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center relative z-10 gap-8">
+            <div class="md:w-1/3">
+                <h1 class="font-serif text-5xl md:text-6xl font-bold text-white mb-4">Contact us</h1>
+            </div>
+            <div class="md:w-2/3 border-l-2 border-gray-500/50 pl-6 md:pl-10 py-2">
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl">
+                    Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="flex-grow py-20 px-4 md:px-12 max-w-7xl mx-auto w-full">
+        <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 mb-16">
+            
+            <!-- Left: Contact Form -->
+            <div class="w-full lg:w-1/2">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy mb-10">Get In Touch</h2>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- First Name -->
+                        <div class="flex flex-col gap-3">
+                            <label for="firstName" class="font-serif font-bold text-lg text-brand-navy">First Name*</label>
+                            <input type="text" id="firstName" placeholder="Enter first name" class="border border-brand-navy/40 bg-transparent py-3 px-4 text-brand-navy placeholder:text-gray-500 text-sm focus:outline-none focus:border-brand-navy transition-colors">
+                        </div>
+                        
+                        <!-- Last Name -->
+                        <div class="flex flex-col gap-3">
+                            <label for="lastName" class="font-serif font-bold text-lg text-brand-navy">Last Name*</label>
+                            <input type="text" id="lastName" placeholder="Enter last email" class="border border-brand-navy/40 bg-transparent py-3 px-4 text-brand-navy placeholder:text-gray-500 text-sm focus:outline-none focus:border-brand-navy transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Phone -->
+                        <div class="flex flex-col gap-3">
+                            <label for="phone" class="font-serif font-bold text-lg text-brand-navy">Your Phone*</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone" class="border border-brand-navy/40 bg-transparent py-3 px-4 text-brand-navy placeholder:text-gray-500 text-sm focus:outline-none focus:border-brand-navy transition-colors">
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="flex flex-col gap-3">
+                            <label for="email" class="font-serif font-bold text-lg text-brand-navy">Your Email*</label>
+                            <input type="email" id="email" placeholder="Enter your email" class="border border-brand-navy/40 bg-transparent py-3 px-4 text-brand-navy placeholder:text-gray-500 text-sm focus:outline-none focus:border-brand-navy transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="flex flex-col gap-3">
+                        <label for="message" class="font-serif font-bold text-lg text-brand-navy flex items-center gap-2">Message <span class="font-sans font-normal text-sm text-gray-500">(optional)</span></label>
+                        <textarea id="message" rows="6" placeholder="Enter message" class="border border-brand-navy/40 bg-transparent py-3 px-4 text-brand-navy placeholder:text-gray-500 text-sm focus:outline-none focus:border-brand-navy transition-colors resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="bg-brand-navy text-white px-8 py-3 text-sm font-semibold tracking-wide hover:bg-brand-navy/90 transition-colors mt-4">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right: Map -->
+            <div class="w-full lg:w-1/2 h-[500px] lg:h-auto map-container">
+                <!-- Using an iframe for a functional map representation -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d15959.030588046777!2d32.5710!3d0.3283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb1f41d3b005%3A0x6b2b64d142d760b!2sWandegeya%2C%20Kampala%2C%20Uganda!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                    class="w-full h-full border-0 shadow-md" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Contact Information Strip -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-12 border-t border-brand-navy/20">
+            <!-- Phone -->
+            <div class="flex items-center gap-4">
+                <i data-lucide="phone" class="w-6 h-6 text-brand-navy"></i>
+                <span class="font-serif font-bold text-brand-navy text-lg">+256 7272 8282</span>
+            </div>
+            
+            <!-- Address -->
+            <div class="flex items-center gap-4">
+                <i data-lucide="map-pin" class="w-6 h-6 text-brand-navy"></i>
+                <span class="font-serif font-bold text-brand-navy text-lg leading-tight">REEV House Wandegeya-kampala</span>
+            </div>
+            
+            <!-- Email -->
+            <div class="flex items-center gap-4">
+                <i data-lucide="mail" class="w-6 h-6 text-brand-navy"></i>
+                <span class="font-serif font-bold text-brand-navy text-lg">kianadvocates@domain.com</span>
+            </div>
+            
+            <!-- Hours -->
+            <div class="flex items-center gap-4">
+                <i data-lucide="clock" class="w-6 h-6 text-brand-navy"></i>
+                <span class="font-serif font-bold text-brand-navy text-lg">07.00 am - 09.00 pm</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-20 pb-8 px-4 md:px-12 relative mt-auto border-t-8 border-brand-navy">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-navy px-8 py-3 border border-gray-700 rounded flex items-center gap-2 shadow-lg">
+            <i data-lucide="scale" class="text-white w-5 h-5"></i>
+            <span class="font-serif font-bold text-lg tracking-wide">Kian Associated Advocates</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mb-16 mt-8">
+            <div class="col-span-1 md:col-span-1 pr-4">
+                <h4 class="font-serif text-lg font-semibold mb-6">About Us</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-lg font-semibold mb-6">Services</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Business Law</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Education Law</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Legal Consultant</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">General Lawyer</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-lg font-semibold mb-6">Page</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Lawyer</a></li>
+                    <li><a href="Contact Us.html" class="hover:text-brand-gold transition-colors">Appointment</a></li>
+                    <li><a href="Documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a></li>
+                    <li><a href="Homepage.html" class="hover:text-brand-gold transition-colors">Home</a></li>
+                    <li><a href="About Us.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-lg font-semibold mb-6">Links</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Term of use</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-lg font-semibold mb-6">Contact Us</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-gray-400"></i>
+                        <span>+256 7362372834</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 mt-1"></i>
+                        <span>REEV House Wandegeya Kampala</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
+                        <span>kianadvocates@domain.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
+            <p>Copyright © 2023 KianAssociatedAdvocates All Right Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
