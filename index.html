@@ -7,8 +7,29 @@
     <title>Kian Associated Advocates | Law Firm</title>
 
     <!-- Tailwind CSS -->
-    <script src="js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#f3f1eb',
+                            navy: '#1d2736',
+                            gold: '#b2955f',
+                            gray: '#6b7280',
+                            light: '#ffffff',
+                            dark: '#151c27'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
