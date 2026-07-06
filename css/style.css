@@ -1,0 +1,83 @@
+/* Global Styles */
+body {
+    background-color: #f3f1eb;
+    color: #333;
+}
+
+/* Custom divider line for specific layouts (About Us, Services Detail) */
+.vertical-divider {
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .vertical-divider::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -2rem;
+        height: 100%;
+        width: 1px;
+        background-color: rgba(29, 39, 54, 0.1); /* brand-navy with opacity */
+    }
+}
+
+/* Accordion functionality for Homepage */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-item.active .accordion-title {
+    color: #b2955f;
+}
+
+/* Map aesthetics integration for Contact Us */
+.map-container iframe {
+    filter: grayscale(20%) contrast(90%);
+}
+
+/* Hover effect for photo gallery text overlay for Documentation */
+.photo-gallery-item:hover .overlay-text {
+    opacity: 1;
+}
+.photo-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom dashed lines for the Process section in Services Detail */
+.process-line {
+    position: absolute;
+    z-index: 0;
+    border-top: 1px dashed #b2955f; /* brand-gold */
+    opacity: 0.5;
+}
+
+/* Specific positioning for desktop lines (simplified for responsiveness) */
+@media (min-width: 768px) {
+    .line-1-2 {
+        width: 150px;
+        top: 50%;
+        left: 100%;
+        transform: translateY(50px) rotate(30deg);
+        transform-origin: left center;
+    }
+    .line-2-3 {
+        width: 150px;
+        top: 0%;
+        left: 100%;
+        transform: translateY(20px) rotate(-30deg);
+        transform-origin: left center;
+    }
+    .line-3-4 {
+        width: 150px;
+        top: 50%;
+        left: 100%;
+        transform: translateY(50px) rotate(30deg);
+        transform-origin: left center;
+    }
+}

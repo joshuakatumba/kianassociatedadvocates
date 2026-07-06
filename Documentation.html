@@ -6,6 +6,7 @@
     <title>Documentation | Kian Associated Advocates</title>
     
     <!-- Tailwind CSS -->
+    <script src="js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -16,44 +17,8 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#f3f1eb', // Light beige background
-                            navy: '#1d2736', // Deep navy blue
-                            gold: '#b2955f', // Gold accent
-                            gray: '#6b7280', // Text gray
-                            light: '#ffffff',
-                            dark: '#151c27'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            background-color: #f3f1eb;
-            color: #333;
-        }
-
-        /* Hover effect for photo gallery text overlay */
-        .photo-gallery-item:hover .overlay-text {
-            opacity: 1;
-        }
-        .photo-gallery-item:hover img {
-            transform: scale(1.05);
-        }
-    </style>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-sans antialiased text-gray-800 selection:bg-brand-gold selection:text-white">
 
@@ -65,10 +30,10 @@
         
         <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
-            <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
-            <a href="services-detail.html" class="hover:text-brand-gold transition-colors">Services</a>
-            <a href="#" class="text-brand-gold transition-colors">Pages</a>
-            <a href="#" class="hover:text-brand-gold transition-colors">Contact Us</a>
+            <a href="About Us.html" class="hover:text-brand-gold transition-colors">About Us</a>
+            <a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Services</a>
+            <a href="Documentation.html" class="text-brand-gold transition-colors">Documentation</a>
+            <a href="Contact Us.html" class="hover:text-brand-gold transition-colors">Contact</a>
         </nav>
 
         <button class="md:hidden text-white">
@@ -275,10 +240,10 @@
             <div>
                 <h4 class="font-serif text-lg font-semibold mb-6">Services</h4>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="#" class="hover:text-brand-gold transition-colors">Corporate Law</a></li>
-                    <li><a href="#" class="hover:text-brand-gold transition-colors">Real Estate</a></li>
-                    <li><a href="#" class="hover:text-brand-gold transition-colors">Legal Advisor</a></li>
-                    <li><a href="#" class="hover:text-brand-gold transition-colors">Personal Injury</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Corporate Law</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Real Estate</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Legal Advisor</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Personal Injury</a></li>
                 </ul>
             </div>
 
@@ -286,10 +251,10 @@
                 <h4 class="font-serif text-lg font-semibold mb-6">Pages</h4>
                 <ul class="space-y-3 text-sm text-gray-400">
                     <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
-                    <li><a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
-                    <li><a href="services-detail.html" class="hover:text-brand-gold transition-colors">Services</a></li>
-                    <li><a href="documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a></li>
-                    <li><a href="#" class="hover:text-brand-gold transition-colors">Blog</a></li>
+                    <li><a href="About Us.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Services</a></li>
+                    <li><a href="Documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a></li>
+                    <li><a href="Contact Us.html" class="hover:text-brand-gold transition-colors">Contact</a></li>
                 </ul>
             </div>
             
@@ -325,8 +290,7 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
 </body>
 </html>

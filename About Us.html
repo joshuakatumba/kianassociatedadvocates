@@ -1,79 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Kian Associated Advocates</title>
-    
+
     <!-- Tailwind CSS -->
+    <script src="js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#f3f1eb', // Light beige background
-                            navy: '#1d2736', // Deep navy blue
-                            gold: '#b2955f', // Gold accent
-                            gray: '#6b7280', // Text gray
-                            light: '#ffffff',
-                            dark: '#151c27' // Slightly darker navy for sections
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            background-color: #f3f1eb;
-            color: #333;
-        }
-        
-        /* Custom divider line for specific layouts */
-        .vertical-divider {
-            position: relative;
-        }
-        @media (min-width: 768px) {
-            .vertical-divider::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: -2rem;
-                height: 100%;
-                width: 1px;
-                background-color: rgba(29, 39, 54, 0.1); /* brand-navy with opacity */
-            }
-        }
-    </style>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="font-sans antialiased text-gray-800 selection:bg-brand-gold selection:text-white">
 
     <!-- Header / Navigation (Transparent variant for this specific hero) -->
     <header class="absolute top-0 left-0 w-full py-6 px-4 md:px-12 flex items-center justify-between z-50 text-white">
         <div class="flex items-center gap-2">
             <i data-lucide="scale" class="text-white w-6 h-6"></i>
-            <span class="font-serif font-bold text-xl tracking-wide">Kian<span class="font-sans font-normal text-sm block -mt-1 text-gray-300 tracking-wider">ASSOCIATED ADVOCATES</span></span>
+            <span class="font-serif font-bold text-xl tracking-wide">Kian<span
+                    class="font-sans font-normal text-sm block -mt-1 text-gray-300 tracking-wider">ASSOCIATED
+                    ADVOCATES</span></span>
         </div>
-        
+
         <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="Homepage.html" class="hover:text-brand-gold transition-colors">Home</a>
+            <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
             <a href="About Us.html" class="text-brand-gold transition-colors">About Us</a>
             <a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Services</a>
             <a href="Documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a>
@@ -86,10 +49,12 @@
     </header>
 
     <!-- Page Hero Section -->
-    <section class="relative w-full pt-32 pb-20 px-4 md:px-12 bg-brand-navy flex flex-col md:flex-row items-center justify-between overflow-hidden">
+    <section
+        class="relative w-full pt-32 pb-20 px-4 md:px-12 bg-brand-navy flex flex-col md:flex-row items-center justify-between overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Lady Justice Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                alt="Lady Justice Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
             <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent"></div>
         </div>
 
@@ -99,7 +64,9 @@
             </div>
             <div class="md:w-2/3 border-l-2 border-brand-gold/30 pl-6 md:pl-10 py-2">
                 <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
                 </p>
             </div>
         </div>
@@ -110,22 +77,31 @@
         <div class="flex flex-col md:flex-row gap-16 items-start mb-20">
             <div class="md:w-5/12 vertical-divider pr-0 md:pr-8">
                 <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">About Us</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight">Helping To Overcome And Ease The Legal Burden</h2>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight">Helping To Overcome
+                    And Ease The Legal Burden</h2>
             </div>
             <div class="md:w-7/12 flex justify-center md:justify-end">
                 <div class="relative w-full max-w-md">
                     <div class="absolute inset-0 bg-gray-200 transform translate-x-4 -translate-y-4 -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1505664154772-a5e4c629fb5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Justice Statue Silver" class="w-full h-auto object-cover shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1505664154772-a5e4c629fb5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Justice Statue Silver" class="w-full h-auto object-cover shadow-sm">
                 </div>
             </div>
         </div>
 
         <div class="border-t border-brand-navy/10 pt-16">
             <p class="text-gray-600 leading-relaxed mb-6 text-center max-w-5xl mx-auto text-sm md:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
             </p>
             <p class="text-gray-600 leading-relaxed text-center max-w-5xl mx-auto text-sm md:text-base">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
             </p>
         </div>
     </section>
@@ -136,25 +112,35 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
             <!-- Icon 1 -->
             <div class="flex flex-col items-center group relative">
-                <i data-lucide="landmark" class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
+                <i data-lucide="landmark"
+                    class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
                 <h4 class="font-bold text-brand-navy font-serif text-lg">Lorem 1</h4>
-                <div class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20"></div>
+                <div
+                    class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20">
+                </div>
             </div>
             <!-- Icon 2 -->
             <div class="flex flex-col items-center group relative">
-                <i data-lucide="scale" class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
+                <i data-lucide="scale"
+                    class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
                 <h4 class="font-bold text-brand-navy font-serif text-lg">Lorem 2</h4>
-                <div class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20"></div>
+                <div
+                    class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20">
+                </div>
             </div>
             <!-- Icon 3 -->
             <div class="flex flex-col items-center group relative">
-                <i data-lucide="book-open" class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
+                <i data-lucide="book-open"
+                    class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
                 <h4 class="font-bold text-brand-navy font-serif text-lg">Lorem 3</h4>
-                <div class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20"></div>
+                <div
+                    class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20">
+                </div>
             </div>
             <!-- Icon 4 -->
             <div class="flex flex-col items-center group">
-                <i data-lucide="gavel" class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
+                <i data-lucide="gavel"
+                    class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
                 <h4 class="font-bold text-brand-navy font-serif text-lg">Lorem 4</h4>
             </div>
         </div>
@@ -164,20 +150,33 @@
     <section class="py-24 px-4 md:px-12 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row gap-12 items-center mb-12">
             <div class="md:w-1/3">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Senior Partner" class="w-full max-w-sm mx-auto h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Senior Partner"
+                    class="w-full max-w-sm mx-auto h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500">
             </div>
             <div class="md:w-2/3">
-                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Welcome Message</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight mb-6">Hello People,<br>Welcome To Kian<br>Associated Advocates</h2>
+                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Welcome
+                    Message</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight mb-6">Hello
+                    People,<br>Welcome To Kian<br>Associated Advocates</h2>
             </div>
         </div>
-        
+
         <div>
             <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
             </p>
             <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
             </p>
         </div>
     </section>
@@ -185,9 +184,13 @@
     <!-- CTA Banner -->
     <section class="bg-[#1f2937] text-center py-20 px-4">
         <div class="max-w-4xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mb-6">We Help You With Quality Legal Lawyer</h2>
-            <p class="text-gray-400 mb-8 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
-            <button class="bg-[#9ca3af] text-brand-navy px-8 py-3 rounded text-sm font-bold uppercase tracking-wider hover:bg-white transition-all">
+            <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mb-6">We Help You With Quality Legal Lawyer
+            </h2>
+            <p class="text-gray-400 mb-8 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Proin gravida nibh vel velit auctor
+                aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
+            <button
+                class="bg-[#9ca3af] text-brand-navy px-8 py-3 rounded text-sm font-bold uppercase tracking-wider hover:bg-white transition-all">
                 Contact Us
             </button>
         </div>
@@ -200,21 +203,31 @@
             <div>
                 <h3 class="font-serif text-3xl font-bold text-brand-navy mb-6">Our Vision</h3>
                 <p class="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum.
                 </p>
                 <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
                 </p>
             </div>
-            
+
             <!-- Mission -->
             <div>
                 <h3 class="font-serif text-3xl font-bold text-brand-navy mb-6">Our Mission</h3>
                 <p class="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum.
                 </p>
                 <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
                 </p>
             </div>
         </div>
@@ -224,21 +237,30 @@
     <section class="py-24 px-4 md:px-12 max-w-7xl mx-auto relative">
         <div class="flex flex-col md:flex-row gap-12 items-center mb-16">
             <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gavel and Books" class="w-full h-64 md:h-80 object-cover shadow-sm">
+                <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Gavel and Books" class="w-full h-64 md:h-80 object-cover shadow-sm">
             </div>
             <div class="md:w-1/2">
-                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Success Story</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-navy leading-tight">The Best Award Has Been Given To Northman Legal Lawyer International</h2>
+                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Success
+                    Story</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-navy leading-tight">The Best Award Has
+                    Been Given To Northman Legal Lawyer International</h2>
             </div>
         </div>
 
         <div class="flex flex-col-reverse md:flex-row gap-12 items-center">
             <div class="md:w-2/3">
-                 <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur.
                 </p>
                 <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                 </p>
                 <div class="flex items-center gap-4 mt-8 pt-6 border-t border-brand-navy/10">
                     <span class="font-bold text-brand-navy">Peter S.</span>
@@ -246,7 +268,8 @@
                 </div>
             </div>
             <div class="md:w-1/3 flex justify-end w-full">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Award Winner" class="w-64 h-auto object-cover shadow-md">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Award Winner" class="w-64 h-auto object-cover shadow-md">
             </div>
         </div>
     </section>
@@ -254,36 +277,44 @@
     <!-- Happy Client / Architecture Section -->
     <section class="py-20 px-4 md:px-12 max-w-7xl mx-auto border-t border-brand-navy/10">
         <div class="flex flex-col md:flex-row gap-8 items-end mb-16">
-             <div class="md:w-1/3">
-                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Testimonial</span>
+            <div class="md:w-1/3">
+                <span
+                    class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Testimonial</span>
                 <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy">Our Happy Client Say About Us</h2>
             </div>
             <div class="md:w-2/3 flex justify-end">
-                <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full md:w-[80%] h-48 object-cover sepia-[.3]" alt="Pillars Details">
+                <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    class="w-full md:w-[80%] h-48 object-cover sepia-[.3]" alt="Pillars Details">
             </div>
         </div>
 
         <div class="flex flex-col md:flex-row gap-12 items-center">
-             <div class="md:w-1/4 flex justify-center md:justify-start">
-                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="w-40 h-40 rounded-full object-cover shadow-lg border-8 border-white">
-             </div>
-             <div class="md:w-3/4 relative">
-                 <i data-lucide="quote" class="text-brand-navy/5 w-32 h-32 absolute -top-10 -left-10 -z-10 transform rotate-180"></i>
-                 <p class="text-gray-600 leading-relaxed mb-6 italic text-lg max-w-3xl">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            <div class="md:w-1/4 flex justify-center md:justify-start">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                    alt="Client" class="w-40 h-40 rounded-full object-cover shadow-lg border-8 border-white">
+            </div>
+            <div class="md:w-3/4 relative">
+                <i data-lucide="quote"
+                    class="text-brand-navy/5 w-32 h-32 absolute -top-10 -left-10 -z-10 transform rotate-180"></i>
+                <p class="text-gray-600 leading-relaxed mb-6 italic text-lg max-w-3xl">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur."
                 </p>
                 <div class="flex items-center gap-4">
                     <h4 class="font-bold text-brand-navy">Mathew E.</h4>
                     <span class="text-brand-gold">★★★★★</span>
                     <span class="text-sm text-gray-500">CEO at ABC Corp</span>
                 </div>
-             </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-brand-navy text-white pt-20 pb-8 px-4 md:px-12 border-t-8 border-brand-navy relative mt-12">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-navy px-8 py-3 border border-gray-700 rounded flex items-center gap-2 shadow-lg">
+        <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-navy px-8 py-3 border border-gray-700 rounded flex items-center gap-2 shadow-lg">
             <i data-lucide="scale" class="text-white w-5 h-5"></i>
             <span class="font-serif font-bold text-lg tracking-wide">Kian Associated Advocates</span>
         </div>
@@ -292,12 +323,21 @@
             <!-- Col 1 -->
             <div class="col-span-1 md:col-span-2 pr-8">
                 <h4 class="font-serif text-lg font-semibold mb-6">About Us</h4>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i
+                            data-lucide="facebook" class="w-4 h-4"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i
+                            data-lucide="twitter" class="w-4 h-4"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i
+                            data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i
+                            data-lucide="linkedin" class="w-4 h-4"></i></a>
                 </div>
             </div>
 
@@ -305,10 +345,14 @@
             <div>
                 <h4 class="font-serif text-lg font-semibold mb-6">Services</h4>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Corporate Law</a></li>
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Real Estate</a></li>
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Legal Advisor</a></li>
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Personal Injury</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Corporate Law</a>
+                    </li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Real Estate</a>
+                    </li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Legal Advisor</a>
+                    </li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Personal
+                            Injury</a></li>
                 </ul>
             </div>
 
@@ -316,14 +360,16 @@
             <div>
                 <h4 class="font-serif text-lg font-semibold mb-6">Pages</h4>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="Homepage.html" class="hover:text-brand-gold transition-colors">Home</a></li>
+                    <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
                     <li><a href="About Us.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Our Attorneys</a></li>
-                    <li><a href="Documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Our Attorneys</a>
+                    </li>
+                    <li><a href="Documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a>
+                    </li>
                     <li><a href="Contact Us.html" class="hover:text-brand-gold transition-colors">Contact</a></li>
                 </ul>
             </div>
-            
+
             <!-- Col 4 -->
             <div>
                 <h4 class="font-serif text-lg font-semibold mb-6">Links</h4>
@@ -352,15 +398,14 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
             <p>Copyright © 2024 Kian Associated Advocates. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Initialize Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
