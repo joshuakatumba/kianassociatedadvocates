@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation | Kian Associated Advocates</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -29,42 +30,206 @@
             }
         }
     </script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="font-sans antialiased text-gray-800 selection:bg-brand-gold selection:text-white">
 
     <header class="absolute top-0 left-0 w-full py-6 px-4 md:px-12 flex items-center justify-between z-50 text-white">
         <div class="flex items-center gap-2">
             <i data-lucide="scale" class="text-white w-6 h-6"></i>
-            <span class="font-serif font-bold text-xl tracking-wide">Kian<span class="font-sans font-normal text-sm block -mt-1 text-gray-300 tracking-wider">ASSOCIATED ADVOCATES</span></span>
+            <span class="font-serif font-bold text-xl tracking-wide">Kian<span
+                    class="font-sans font-normal text-sm block -mt-1 text-gray-300 tracking-wider">ASSOCIATED
+                    ADVOCATES</span></span>
         </div>
-        
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
-            <a href="About Us.html" class="hover:text-brand-gold transition-colors">About Us</a>
-            <a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Services</a>
-            <a href="Documentation.html" class="text-brand-gold transition-colors">Documentation</a>
-            <a href="Contact Us.html" class="hover:text-brand-gold transition-colors">Contact</a>
+
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium">
+            <a href="Index.html" class="hover:text-brand-gold transition-colors">Home</a>
+            <a href="About Us.html" class="hover:text-brand-gold transition-colors">Our Firm</a>
+
+            <!-- Services & Sectors Dropdown -->
+            <div class="group relative">
+                <a href="Services Detail.html"
+                    class="flex items-center gap-1 hover:text-brand-gold transition-colors cursor-pointer">
+                    Services & Sectors <svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+
+                <!-- Mega Menu Wrapper (invisible bridge for hover) -->
+                <div
+                    class="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-left">
+                    <!-- Mega Menu Content -->
+                    <div
+                        class="w-[800px] bg-white shadow-2xl flex border-t-2 border-brand-gold rounded-b-md overflow-hidden">
+                        <!-- Left Panel (Logo area) -->
+                        <div
+                            class="w-1/3 bg-brand-bg/50 p-8 flex flex-col justify-center items-center border-r border-gray-100 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-[0.03]">
+                                <i data-lucide="scale" class="w-64 h-64 text-brand-navy"></i>
+                            </div>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <i data-lucide="scale" class="text-brand-navy w-12 h-12 mb-2"></i>
+                                <span
+                                    class="font-serif font-bold text-xl tracking-wide text-brand-navy text-center leading-tight">Kian<span
+                                        class="font-sans font-normal text-xs block text-gray-500 tracking-wider mt-1">ASSOCIATED<br>ADVOCATES</span></span>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel (Links) -->
+                        <div class="w-2/3 p-8 flex gap-8">
+                            <!-- Services Column -->
+                            <div class="w-1/2">
+                                <h3
+                                    class="font-sans font-semibold text-brand-navy text-[13px] mb-5 flex items-center gap-2 uppercase tracking-widest">
+                                    <div class="w-1.5 h-1.5 bg-brand-navy"></div> SERVICES
+                                </h3>
+                                <ul class="space-y-2.5">
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Banking
+                                            & Finance</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Corporate,
+                                            Commercial and M&A</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Dispute
+                                            Resolution</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Employment
+                                            & Labour</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Immigration
+                                            & NGOs</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Intellectual
+                                            Property</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Oil
+                                            & Gas, Energy & Infrastructure</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Tax</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Technology,
+                                            Media & Telecommunication (TMT)</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sectors Column -->
+                            <div class="w-1/2">
+                                <h3
+                                    class="font-sans font-semibold text-brand-navy text-[13px] mb-5 flex items-center gap-2 uppercase tracking-widest">
+                                    <div class="w-1.5 h-1.5 bg-brand-navy"></div> SECTORS
+                                </h3>
+                                <ul class="space-y-2.5">
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Aviation</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Construction</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Consumer
+                                            Goods</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Education</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Energy</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Financial
+                                            Institutions</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Hotels
+                                            & Leisure</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Industrials</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Infrastructure</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Insurance</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Mining</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Pharmaceuticals
+                                            & Healthcare</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Ports,
+                                            Transport & Logistics</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">TMT</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="hover:text-brand-gold transition-colors">Our People</a>
+
+            <!-- Insights Dropdown -->
+            <div class="group relative">
+                <a href="#" class="flex items-center gap-1 hover:text-brand-gold transition-colors cursor-pointer">
+                    Insights <svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <!-- Bridge -->
+                <div
+                    class="absolute top-full left-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-left">
+                    <div class="w-48 bg-white shadow-xl flex flex-col border-t-2 border-brand-gold rounded-b-md py-2">
+                        <a href="#"
+                            class="px-4 py-2 text-sm text-gray-500 hover:text-brand-gold hover:bg-gray-50 transition-colors">Publications</a>
+                        <a href="#"
+                            class="px-4 py-2 text-sm text-gray-500 hover:text-brand-gold hover:bg-gray-50 transition-colors">News</a>
+                        <a href="#"
+                            class="px-4 py-2 text-sm text-gray-500 hover:text-brand-gold hover:bg-gray-50 transition-colors">Legal
+                            Updates</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="hover:text-brand-gold transition-colors">Events</a>
+            <a href="#" class="hover:text-brand-gold transition-colors">Careers</a>
+            <a href="Contact Us.html" class="hover:text-brand-gold transition-colors">Contacts</a>
         </nav>
 
-        <button class="md:hidden text-white">
+        <a href="Contact Us.html"
+            class="hidden lg:flex items-center gap-2 bg-brand-gold text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white hover:text-brand-navy transition-colors shadow-md">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Request Appointment
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden text-white">
             <i data-lucide="menu"></i>
         </button>
     </header>
 
-    <section class="relative w-full pt-32 pb-20 px-4 md:px-12 bg-brand-navy flex flex-col md:flex-row items-center justify-between overflow-hidden">
+    <section
+        class="relative w-full pt-32 pb-20 px-4 md:px-12 bg-brand-navy flex flex-col md:flex-row items-center justify-between overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Lady Justice Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                alt="Lady Justice Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
             <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent"></div>
         </div>
 
@@ -74,7 +239,9 @@
             </div>
             <div class="md:w-2/3 border-l-2 border-brand-gold/30 pl-6 md:pl-10 py-2">
                 <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
                 </p>
             </div>
         </div>
@@ -87,7 +254,8 @@
             </div>
             <div class="md:w-1/3">
                 <p class="text-gray-500 text-sm leading-relaxed border-l-2 border-brand-gold pl-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                    mattis, pulvinar dapibus leo.
                 </p>
             </div>
         </div>
@@ -97,38 +265,53 @@
             <!-- Video Item 1 (With Play Button) -->
             <div class="group cursor-pointer">
                 <div class="relative w-full h-80 overflow-hidden mb-6 bg-brand-navy">
-                    <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 blur-[2px] opacity-80">
+                    <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Video Thumbnail"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 blur-[2px] opacity-80">
                     <!-- Play Button Overlay -->
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-brand-gold transition-colors shadow-lg">
-                            <i data-lucide="play" class="w-6 h-6 text-brand-navy ml-1 group-hover:text-white transition-colors"></i>
+                        <div
+                            class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-brand-gold transition-colors shadow-lg">
+                            <i data-lucide="play"
+                                class="w-6 h-6 text-brand-navy ml-1 group-hover:text-white transition-colors"></i>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center gap-6 text-sm text-gray-500 font-medium uppercase tracking-wider mb-3">
-                    <span class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-brand-gold"></i> December 09 2023</span>
-                    <span class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-brand-gold"></i> 10 Minutes</span>
+                    <span class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-brand-gold"></i>
+                        December 09 2023</span>
+                    <span class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-brand-gold"></i> 10
+                        Minutes</span>
                 </div>
-                <h3 class="font-serif text-2xl font-bold text-brand-navy leading-snug group-hover:text-brand-gold transition-colors">4 Evidence on Geolan's murder conviction at the coffee shop</h3>
+                <h3
+                    class="font-serif text-2xl font-bold text-brand-navy leading-snug group-hover:text-brand-gold transition-colors">
+                    4 Evidence on Geolan's murder conviction at the coffee shop</h3>
             </div>
 
             <!-- Video/Blog Item 2 (Standard Image) -->
             <div class="group cursor-pointer mt-8 md:mt-0">
                 <div class="relative w-full h-80 overflow-hidden mb-6">
-                    <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Justice Statue details" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Justice Statue details"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="flex items-center gap-6 text-sm text-gray-500 font-medium uppercase tracking-wider mb-3">
-                    <span class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-brand-gold"></i> December 04 2023</span>
-                    <span class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-brand-gold"></i> 5 Minutes</span>
+                    <span class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-brand-gold"></i>
+                        December 04 2023</span>
+                    <span class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-brand-gold"></i> 5
+                        Minutes</span>
                 </div>
-                <h3 class="font-serif text-2xl font-bold text-brand-navy leading-snug group-hover:text-brand-gold transition-colors">First legal of Ernando was suspected of stealing money</h3>
+                <h3
+                    class="font-serif text-2xl font-bold text-brand-navy leading-snug group-hover:text-brand-gold transition-colors">
+                    First legal of Ernando was suspected of stealing money</h3>
             </div>
         </div>
 
         <!-- Pagination -->
         <div class="flex items-center justify-center gap-4 text-sm font-medium text-brand-navy mt-16">
             <button class="hover:text-brand-gold transition-colors">Prev</button>
-            <button class="w-8 h-8 rounded flex items-center justify-center bg-brand-navy text-white hover:bg-brand-gold transition-colors">1</button>
+            <button
+                class="w-8 h-8 rounded flex items-center justify-center bg-brand-navy text-white hover:bg-brand-gold transition-colors">1</button>
             <button class="w-8 h-8 rounded flex items-center justify-center hover:bg-white transition-colors">2</button>
             <button class="w-8 h-8 rounded flex items-center justify-center hover:bg-white transition-colors">3</button>
             <button class="hover:text-brand-gold transition-colors">Next</button>
@@ -144,48 +327,61 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Photo 1 (With specific text overlay shown in mockup) -->
             <div class="relative w-full h-72 overflow-hidden bg-brand-navy photo-gallery-item cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Meeting" class="w-full h-full object-cover transition-transform duration-500 opacity-60">
-                <div class="absolute inset-0 flex items-center justify-center p-6 text-center overlay-text transition-opacity duration-300">
-                    <h3 class="font-serif text-2xl font-bold text-white leading-snug drop-shadow-md">Legal Meeting Gathering</h3>
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Meeting" class="w-full h-full object-cover transition-transform duration-500 opacity-60">
+                <div
+                    class="absolute inset-0 flex items-center justify-center p-6 text-center overlay-text transition-opacity duration-300">
+                    <h3 class="font-serif text-2xl font-bold text-white leading-snug drop-shadow-md">Legal Meeting
+                        Gathering</h3>
                 </div>
             </div>
 
             <!-- Photo 2 -->
             <div class="relative w-full h-72 overflow-hidden bg-brand-navy photo-gallery-item cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Statue" class="w-full h-full object-cover transition-transform duration-500">
-                <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
+                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Statue" class="w-full h-full object-cover transition-transform duration-500">
+                <div
+                    class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
                     <i data-lucide="maximize-2" class="text-white w-8 h-8"></i>
                 </div>
             </div>
 
             <!-- Photo 3 -->
             <div class="relative w-full h-72 overflow-hidden bg-brand-navy photo-gallery-item cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gavel" class="w-full h-full object-cover transition-transform duration-500">
-                <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
+                <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Gavel" class="w-full h-full object-cover transition-transform duration-500">
+                <div
+                    class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
                     <i data-lucide="maximize-2" class="text-white w-8 h-8"></i>
                 </div>
             </div>
 
             <!-- Photo 4 -->
             <div class="relative w-full h-72 overflow-hidden bg-brand-navy photo-gallery-item cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Statue close" class="w-full h-full object-cover transition-transform duration-500">
-                <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
+                <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Statue close" class="w-full h-full object-cover transition-transform duration-500">
+                <div
+                    class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
                     <i data-lucide="maximize-2" class="text-white w-8 h-8"></i>
                 </div>
             </div>
 
             <!-- Photo 5 -->
             <div class="relative w-full h-72 overflow-hidden bg-brand-navy photo-gallery-item cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Scales hold" class="w-full h-full object-cover transition-transform duration-500">
-                <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Scales hold" class="w-full h-full object-cover transition-transform duration-500">
+                <div
+                    class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
                     <i data-lucide="maximize-2" class="text-white w-8 h-8"></i>
                 </div>
             </div>
 
             <!-- Photo 6 -->
             <div class="relative w-full h-72 overflow-hidden bg-brand-navy photo-gallery-item cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Handshake scales" class="w-full h-full object-cover transition-transform duration-500">
-                <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Handshake scales" class="w-full h-full object-cover transition-transform duration-500">
+                <div
+                    class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center p-6 text-center overlay-text opacity-0 transition-opacity duration-300">
                     <i data-lucide="maximize-2" class="text-white w-8 h-8"></i>
                 </div>
             </div>
@@ -194,7 +390,8 @@
         <!-- Pagination -->
         <div class="flex items-center justify-center gap-4 text-sm font-medium text-brand-navy mt-16 mb-8">
             <button class="hover:text-brand-gold transition-colors">Prev</button>
-            <button class="w-8 h-8 rounded flex items-center justify-center bg-brand-navy text-white hover:bg-brand-gold transition-colors">1</button>
+            <button
+                class="w-8 h-8 rounded flex items-center justify-center bg-brand-navy text-white hover:bg-brand-gold transition-colors">1</button>
             <button class="w-8 h-8 rounded flex items-center justify-center hover:bg-white transition-colors">2</button>
             <button class="w-8 h-8 rounded flex items-center justify-center hover:bg-white transition-colors">3</button>
             <button class="hover:text-brand-gold transition-colors">Next</button>
@@ -203,9 +400,13 @@
 
     <section class="bg-[#1f2937] text-center py-20 px-4">
         <div class="max-w-4xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mb-6">We Help You With Quality Legal Lawyer</h2>
-            <p class="text-gray-400 mb-8 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
-            <button class="bg-[#a39b82] text-white px-8 py-3 rounded text-sm font-bold uppercase tracking-wider hover:bg-brand-navy transition-all shadow-md">
+            <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mb-6">We Help You With Quality Legal Lawyer
+            </h2>
+            <p class="text-gray-400 mb-8 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Proin gravida nibh vel velit auctor
+                aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
+            <button
+                class="bg-[#a39b82] text-white px-8 py-3 rounded text-sm font-bold uppercase tracking-wider hover:bg-brand-navy transition-all shadow-md">
                 Get Started
             </button>
         </div>
@@ -213,35 +414,43 @@
 
     <section class="py-20 px-4 md:px-12 max-w-7xl mx-auto mt-12">
         <div class="flex flex-col md:flex-row gap-8 items-end mb-16">
-             <div class="md:w-1/3">
-                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Testimonial</span>
+            <div class="md:w-1/3">
+                <span
+                    class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Testimonial</span>
                 <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy">Our Happy Client Say About Us</h2>
             </div>
             <div class="md:w-2/3 flex justify-end">
-                <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full md:w-[80%] h-48 object-cover sepia-[.3]" alt="Pillars Details">
+                <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    class="w-full md:w-[80%] h-48 object-cover sepia-[.3]" alt="Pillars Details">
             </div>
         </div>
 
         <div class="flex flex-col md:flex-row gap-12 items-center">
-             <div class="md:w-1/4 flex justify-center md:justify-start">
-                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="w-40 h-40 rounded-full object-cover shadow-lg border-8 border-brand-bg">
-             </div>
-             <div class="md:w-3/4 relative">
-                 <i data-lucide="quote" class="text-brand-navy/5 w-32 h-32 absolute -top-10 -left-10 -z-10 transform rotate-180"></i>
-                 <p class="text-gray-600 leading-relaxed mb-6 italic text-lg max-w-3xl">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            <div class="md:w-1/4 flex justify-center md:justify-start">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                    alt="Client" class="w-40 h-40 rounded-full object-cover shadow-lg border-8 border-brand-bg">
+            </div>
+            <div class="md:w-3/4 relative">
+                <i data-lucide="quote"
+                    class="text-brand-navy/5 w-32 h-32 absolute -top-10 -left-10 -z-10 transform rotate-180"></i>
+                <p class="text-gray-600 leading-relaxed mb-6 italic text-lg max-w-3xl">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur."
                 </p>
                 <div class="flex items-center gap-4">
                     <h4 class="font-bold text-brand-navy">Mathew E.</h4>
                     <span class="text-[#a39b82]">★★★★★</span>
                     <span class="text-sm text-gray-500">CEO at ABC Corp</span>
                 </div>
-             </div>
+            </div>
         </div>
     </section>
 
     <footer class="bg-brand-navy text-white pt-20 pb-8 px-4 md:px-12 border-t-8 border-brand-navy relative mt-12">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-navy px-8 py-3 border border-gray-700 rounded flex items-center gap-2 shadow-lg">
+        <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-navy px-8 py-3 border border-gray-700 rounded flex items-center gap-2 shadow-lg">
             <i data-lucide="scale" class="text-white w-5 h-5"></i>
             <span class="font-serif font-bold text-lg tracking-wide">Kian Associated Advocates</span>
         </div>
@@ -249,36 +458,50 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mb-16 mt-8">
             <div class="col-span-1 md:col-span-2 pr-8">
                 <h4 class="font-serif text-lg font-semibold mb-6">About Us</h4>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i
+                            data-lucide="facebook" class="w-4 h-4"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i
+                            data-lucide="twitter" class="w-4 h-4"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i
+                            data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"><i
+                            data-lucide="linkedin" class="w-4 h-4"></i></a>
                 </div>
             </div>
 
             <div>
                 <h4 class="font-serif text-lg font-semibold mb-6">Services</h4>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Corporate Law</a></li>
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Real Estate</a></li>
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Legal Advisor</a></li>
-                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Personal Injury</a></li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Corporate Law</a>
+                    </li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Real Estate</a>
+                    </li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Legal Advisor</a>
+                    </li>
+                    <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Personal
+                            Injury</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="font-serif text-lg font-semibold mb-6">Pages</h4>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
+                    <li><a href="Index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
                     <li><a href="About Us.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
                     <li><a href="Services Detail.html" class="hover:text-brand-gold transition-colors">Services</a></li>
-                    <li><a href="Documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a></li>
+                    <li><a href="Documentation.html" class="hover:text-brand-gold transition-colors">Documentation</a>
+                    </li>
                     <li><a href="Contact Us.html" class="hover:text-brand-gold transition-colors">Contact</a></li>
                 </ul>
             </div>
-            
+
             <div>
                 <h4 class="font-serif text-lg font-semibold mb-6">Links</h4>
                 <ul class="space-y-3 text-sm text-gray-400">
@@ -305,13 +528,82 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
             <p>Copyright © 2024 Kian Associated Advocates. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-brand-navy z-[100] transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto">
+        <div class="p-4 md:px-12 flex justify-between items-center border-b border-white/10">
+            <span class="font-serif font-bold text-xl tracking-wide text-white leading-tight">Kian<span
+                    class="font-sans font-normal text-xs block text-brand-gold tracking-wider mt-1">ASSOCIATED<br>ADVOCATES</span></span>
+            <button id="mobile-menu-close" class="text-white hover:text-brand-gold transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+        </div>
+        <div class="px-4 py-8 md:px-12 flex flex-col gap-6">
+            <a href="Index.html" class="text-white text-xl font-medium hover:text-brand-gold transition-colors">Home</a>
+            <a href="About Us.html" class="text-white text-xl font-medium hover:text-brand-gold transition-colors">Our
+                Firm</a>
+
+            <!-- Mobile Accordion for Services -->
+            <div class="mobile-accordion-item">
+                <button
+                    class="mobile-accordion-btn w-full flex justify-between items-center text-white text-xl font-medium hover:text-brand-gold transition-colors pb-2 border-b border-white/10">
+                    Services & Sectors
+                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                    <div class="py-4 pl-4 flex flex-col gap-4">
+                        <a href="Services Detail.html" class="text-gray-400 hover:text-brand-gold transition-colors">All
+                            Services</a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Banking & Finance</a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Corporate, Commercial
+                            and M&A</a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Dispute Resolution</a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Employment &
+                            Labour</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion for Insights -->
+            <div class="mobile-accordion-item">
+                <button
+                    class="mobile-accordion-btn w-full flex justify-between items-center text-white text-xl font-medium hover:text-brand-gold transition-colors pb-2 border-b border-white/10">
+                    Insights
+                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                    <div class="py-4 pl-4 flex flex-col gap-4">
+                        <a href="Documentation.html"
+                            class="text-gray-400 hover:text-brand-gold transition-colors">Publications</a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">News</a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Legal Updates</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#"
+                class="text-white text-xl font-medium hover:text-brand-gold transition-colors border-b border-white/10 pb-2">Events</a>
+            <a href="#"
+                class="text-white text-xl font-medium hover:text-brand-gold transition-colors border-b border-white/10 pb-2">Careers</a>
+            <a href="Contact Us.html"
+                class="text-white text-xl font-medium hover:text-brand-gold transition-colors border-b border-white/10 pb-2">Contacts</a>
+
+            <a href="Contact Us.html"
+                class="mt-8 inline-flex items-center justify-center gap-2 bg-brand-gold text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-brand-navy transition-colors w-full shadow-md">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                Request Appointment
+            </a>
+        </div>
+    </div>
+
     <!-- Main JS -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
