@@ -6,32 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Kian Associated Advocates</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            // Using HSL (Hue, Saturation, Lightness) for easier color tweaking
-                            bg: 'hsl(45, 29%, 97%)',      // Crisp Off-White
-                            navy: 'hsl(216, 70%, 22%)',   // Deep Royal Navy
-                            gold: 'hsl(43, 80%, 52%)',    // Classic Metallic Gold
-                            gray: 'hsl(220, 9%, 46%)',    // Text Gray
-                            light: 'hsl(0, 0%, 100%)',    // Pure White
-                            dark: 'hsl(222, 50%, 11%)'    // Deep Slate
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,148 +17,117 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css?v=21">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 
-<body class="font-sans antialiased text-gray-800 selection:bg-brand-gold selection:text-white">
+<body class="site-body">
 
-    <!-- Header / Navigation (Transparent variant for this specific hero) -->
-    <header
-        class="fixed top-0 left-0 w-full py-5 px-4 md:px-12 grid grid-cols-2 lg:grid-cols-[1fr_auto_1fr] items-center z-[100] bg-brand-bg text-brand-navy shadow-md transition-all duration-300">
-        <!-- Desktop Left Spacer -->
-        <div class="hidden lg:block"></div>
+    <!-- ==========================
+         HEADER SECTION
+         ========================== -->
+    <header class="site-header">
+        <div class="site-header__spacer" aria-hidden="true"></div>
 
-        <!-- Center Group (Logo & Nav) -->
-        <div class="flex items-center justify-start lg:justify-center gap-8 xl:gap-16">
-            <div class="flex items-center gap-2">
-                <i data-lucide="scale" class="text-brand-navy w-6 h-6"></i>
-                <span class="font-serif font-bold text-xl tracking-wide text-brand-navy">Kian<span
-                        class="font-sans font-normal text-sm block -mt-1 text-gray-500 tracking-wider">ASSOCIATED
-                        ADVOCATES</span></span>
-            </div>
+        <div class="site-header__brand-nav">
+            <a href="index.html" class="site-logo" aria-label="Kian Associated Advocates home">
+                <img src="assets/logo-northman-gold.png" alt="Emblem" class="site-logo__emblem">
+                <span class="site-logo__text">
+                    Kian
+                    <span class="site-logo__tagline">
+                        ASSOCIATED ADVOCATES
+                    </span>
+                </span>
+            </a>
 
-            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-base font-medium text-brand-navy">
-                <a href="Index.html" class="hover:text-brand-gold transition-colors">Home</a>
-                <a href="About Us.html" class="text-brand-gold transition-colors">Our Firm</a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="index.html" class="site-nav-link">Home</a>
+                <a href="About Us.html" class="site-nav-link active">Our Firm</a>
 
-                <!-- Services & Sectors Dropdown -->
-                <div class="group relative">
-                    <a href="Services Detail.html"
-                        class="flex items-center gap-1 hover:text-brand-gold transition-colors cursor-pointer">
-                        Services & Sectors <svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor"
-                            stroke-width="2.5" viewBox="0 0 24 24">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
+                <div class="site-nav-dropdown">
+                    <a href="#" class="site-nav-dropdown__trigger">
+                        Services &amp; Sectors
+                        <i data-lucide="chevron-down" class="site-nav-dropdown__chevron"></i>
                     </a>
 
-                    <!-- Mega Menu Wrapper (invisible bridge for hover) -->
-                    <div
-                        class="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-left">
-                        <!-- Mega Menu Content -->
-                        <div
-                            class="w-[800px] bg-white shadow-2xl flex border-t-2 border-brand-gold rounded-b-md overflow-hidden">
-                            <!-- Left Panel (Logo area) -->
-                            <div
-                                class="w-1/3 bg-brand-bg/50 p-8 flex flex-col justify-center items-center border-r border-gray-100 relative overflow-hidden">
-                                <div class="absolute inset-0 flex items-center justify-center opacity-[0.03]">
-                                    <i data-lucide="scale" class="w-64 h-64 text-brand-navy"></i>
+                    <div class="site-nav-mega-menu">
+                        <div class="site-nav-mega-menu__panel">
+                            <div class="site-nav-mega-menu__brand">
+                                <div class="site-nav-mega-menu__brand-bg" aria-hidden="true">
+                                    <img src="assets/logo-northman-gold.png" alt="Emblem" class="site-logo__emblem">
                                 </div>
-                                <div class="relative z-10 flex flex-col items-center">
-                                    <i data-lucide="scale" class="text-brand-navy w-12 h-12 mb-2"></i>
-                                    <span
-                                        class="font-serif font-bold text-xl tracking-wide text-brand-navy text-center leading-tight">Kian<span
-                                            class="font-sans font-normal text-xs block text-gray-500 tracking-wider mt-1">ASSOCIATED<br>ADVOCATES</span></span>
+                                <div class="site-nav-mega-menu__brand-content">
+                                    <img src="assets/logo-northman-gold.png" alt="Emblem" class="site-logo__emblem">
+                                    <span class="site-logo__text">
+                                        Kian
+                                        <span class="site-logo__tagline">
+                                            ASSOCIATED<br>ADVOCATES
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
-                            <!-- Right Panel (Links) -->
-                            <div class="w-2/3 p-8 flex gap-8">
-                                <!-- Services Column -->
-                                <div class="w-1/2">
-                                    <h3
-                                        class="font-sans font-semibold text-brand-navy text-[13px] mb-5 flex items-center gap-2 uppercase tracking-widest">
-                                        <div class="w-1.5 h-1.5 bg-brand-navy"></div> SERVICES
+                            <div class="site-nav-mega-menu__links">
+                                <div class="site-nav-mega-menu__column">
+                                    <h3 class="site-nav-mega-menu__heading">
+                                        <span class="site-nav-mega-menu__heading-indicator" aria-hidden="true"></span>
+                                        SERVICES
                                     </h3>
-                                    <ul class="space-y-2.5">
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Banking
-                                                & Finance</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Corporate,
-                                                Commercial and M&A</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Dispute
-                                                Resolution</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Employment
-                                                & Labour</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Immigration
-                                                & NGOs</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Intellectual
-                                                Property</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Oil
-                                                & Gas, Energy & Infrastructure</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Tax</a>
+                                    <ul class="site-nav-mega-menu__list">
+                                        <li><a href="Services &amp; Sectors/Banking and Finance.html"
+                                                class="site-nav-mega-menu__link">Banking &amp; Finance</a></li>
+                                        <li><a href="Services &amp; Sectors/Coporate, Commercial and M&amp;A.html"
+                                                class="site-nav-mega-menu__link">Corporate, Commercial and M&amp;A</a>
                                         </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Technology,
-                                                Media & Telecommunication (TMT)</a></li>
+                                        <li><a href="Services &amp; Sectors/Dispute Resolution.html"
+                                                class="site-nav-mega-menu__link">Dispute Resolution</a></li>
+                                        <li><a href="Services &amp; Sectors/Employment And Labour.html"
+                                                class="site-nav-mega-menu__link">Employment &amp; Labour</a></li>
+                                        <li><a href="Services &amp; Sectors/Immigration &amp; NGOs.html"
+                                                class="site-nav-mega-menu__link">Immigration &amp; NGOs</a></li>
+                                        <li><a href="Services &amp; Sectors/Intellectual Property.html"
+                                                class="site-nav-mega-menu__link">Intellectual Property</a></li>
+                                        <li><a href="Services &amp; Sectors/Oil &amp; Gas And Infrastructure.html"
+                                                class="site-nav-mega-menu__link">Oil &amp; Gas, Energy &amp;
+                                                Infrastructure</a></li>
+                                        <li><a href="Services &amp; Sectors/Tax.html"
+                                                class="site-nav-mega-menu__link">Tax</a></li>
+                                        <li><a href="Services &amp; Sectors/Technology, Media &amp; Communication .html"
+                                                class="site-nav-mega-menu__link">Technology, Media &amp;
+                                                Telecommunication (TMT)</a></li>
                                     </ul>
                                 </div>
 
-                                <!-- Sectors Column -->
-                                <div class="w-1/2">
-                                    <h3
-                                        class="font-sans font-semibold text-brand-navy text-[13px] mb-5 flex items-center gap-2 uppercase tracking-widest">
-                                        <div class="w-1.5 h-1.5 bg-brand-navy"></div> SECTORS
+                                <div class="site-nav-mega-menu__column">
+                                    <h3 class="site-nav-mega-menu__heading">
+                                        <span class="site-nav-mega-menu__heading-indicator" aria-hidden="true"></span>
+                                        SECTORS
                                     </h3>
-                                    <ul class="space-y-2.5">
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Aviation</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Construction</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Consumer
+                                    <ul class="site-nav-mega-menu__list">
+                                        <li><a href="Aviation.html" class="site-nav-mega-menu__link">Aviation</a></li>
+                                        <li><a href="Construction.html"
+                                                class="site-nav-mega-menu__link">Construction</a></li>
+                                        <li><a href="Consumer Goods.html" class="site-nav-mega-menu__link">Consumer
                                                 Goods</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Education</a>
+                                        <li><a href="Education.html" class="site-nav-mega-menu__link">Education</a></li>
+                                        <li><a href="Energy.html" class="site-nav-mega-menu__link">Energy</a></li>
+                                        <li><a href="Financial Institutions.html"
+                                                class="site-nav-mega-menu__link">Financial Institutions</a></li>
+                                        <li><a href="Hotels and Leisure.html" class="site-nav-mega-menu__link">Hotels
+                                                &amp; Leisure</a></li>
+                                        <li><a href="Industrials.html" class="site-nav-mega-menu__link">Industrials</a>
                                         </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Energy</a>
+                                        <li><a href="Infrastructure.html"
+                                                class="site-nav-mega-menu__link">Infrastructure</a></li>
+                                        <li><a href="Insurance.html" class="site-nav-mega-menu__link">Insurance</a></li>
+                                        <li><a href="Mining.html" class="site-nav-mega-menu__link">Mining</a></li>
+                                        <li><a href="Pharmaceuticals and Healthcare.html"
+                                                class="site-nav-mega-menu__link">Pharmaceuticals &amp; Healthcare</a>
                                         </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Financial
-                                                Institutions</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Hotels
-                                                & Leisure</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Industrials</a>
+                                        <li><a href="Ports, Transport and Logistics.html"
+                                                class="site-nav-mega-menu__link">Ports, Transport &amp; Logistics</a>
                                         </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Infrastructure</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Insurance</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Mining</a>
-                                        </li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Pharmaceuticals
-                                                & Healthcare</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">Ports,
-                                                Transport & Logistics</a></li>
-                                        <li><a href="#"
-                                                class="text-gray-600 hover:text-brand-gold text-[13px] font-light transition-colors block">TMT</a>
-                                        </li>
+                                        <li><a href="TMT.html" class="site-nav-mega-menu__link">TMT</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -192,451 +135,438 @@
                     </div>
                 </div>
 
-                <a href="Our People.html" class="hover:text-brand-gold transition-colors">Our People</a>
+                <a href="Our People.html" class="site-nav-link">Our People</a>
 
-                <!-- Insights Dropdown -->
-                <div class="group relative">
-                    <a href="#" class="flex items-center gap-1 hover:text-brand-gold transition-colors cursor-pointer">
-                        Insights <svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5"
-                            viewBox="0 0 24 24">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
+                <div class="site-nav-dropdown">
+                    <a href="#" class="site-nav-dropdown__trigger">
+                        Insights
+                        <i data-lucide="chevron-down" class="site-nav-dropdown__chevron"></i>
                     </a>
-                    <!-- Bridge -->
-                    <div
-                        class="absolute top-full left-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-left">
-                        <div
-                            class="w-48 bg-white shadow-xl flex flex-col border-t-2 border-brand-gold rounded-b-md py-2">
-                            <a href="#"
-                                class="px-4 py-2 text-sm text-gray-500 hover:text-brand-gold hover:bg-gray-50 transition-colors">Publications</a>
-                            <a href="#"
-                                class="px-4 py-2 text-sm text-gray-500 hover:text-brand-gold hover:bg-gray-50 transition-colors">News</a>
-                            <a href="#"
-                                class="px-4 py-2 text-sm text-gray-500 hover:text-brand-gold hover:bg-gray-50 transition-colors">Legal
-                                Updates</a>
+                    <div class="site-nav-dropdown__panel">
+                        <div class="site-nav-dropdown__menu">
+                            <a href="Documentation.html" class="site-nav-dropdown__item">Publications</a>
+                            <a href="#" class="site-nav-dropdown__item">News</a>
+                            <a href="#" class="site-nav-dropdown__item">Legal Updates</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="#" class="hover:text-brand-gold transition-colors">Events</a>
-                <a href="#" class="hover:text-brand-gold transition-colors">Careers</a>
-                <a href="Contact Us.html" class="hover:text-brand-gold transition-colors">Contacts</a>
-            </nav>
 
+
+                <a href="Contact Us.html" class="site-nav-link">Contacts</a>
+            </nav>
         </div>
 
-        <!-- Right Group (Button & Mobile Menu) -->
-        <div class="flex items-center justify-end">
-            <a href="Contact Us.html"
-                class="hidden lg:flex items-center gap-2 bg-brand-gold text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white hover:text-brand-navy transition-colors shadow-md">
-                <i data-lucide="phone" class="w-4 h-4"></i>
+        <div class="site-header__actions">
+            <a href="Contact Us.html" class="site-header__cta">
+                <i data-lucide="phone"></i>
                 Request Appointment
             </a>
 
-            <button id="mobile-menu-btn" class="lg:hidden text-brand-navy">
+            <button id="mobile-nav-toggle" type="button" class="mobile-nav-toggle" aria-label="Open navigation menu"
+                aria-controls="mobile-nav-overlay" aria-expanded="false">
                 <i data-lucide="menu"></i>
             </button>
         </div>
     </header>
 
-    <!-- Page Hero Section -->
-    <section
-        class="relative w-full pt-32 pb-20 px-4 md:px-12 bg-brand-navy flex flex-col md:flex-row items-center justify-between overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-                alt="Lady Justice Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent"></div>
-        </div>
 
-        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center relative z-10 gap-8">
-            <div class="md:w-1/3">
-                <h1 class="font-serif text-5xl md:text-6xl font-bold text-white mb-4">About Us</h1>
+    <main>
+
+        <!-- ==========================
+             SUBPAGE HERO SECTION
+             ========================== -->
+        <section class="subpage-hero">
+            <div class="subpage-hero__bg">
+                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                    alt="Lady Justice Background" class="subpage-hero__bg-img">
+                <div class="subpage-hero__overlay"></div>
             </div>
-            <div class="md:w-2/3 border-l-2 border-brand-gold/30 pl-6 md:pl-10 py-2">
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat.
+
+            <div class="subpage-hero__inner site-container">
+                <div class="subpage-hero__title-col">
+                    <h1 class="section-heading section-heading--light">About Us</h1>
+                </div>
+                <div class="subpage-hero__desc-col">
+                    <p class="subpage-hero__desc">
+                        Dedicated to delivering legal excellence, protecting our clients' interests, and upholding
+                        justice with integrity and unwavering professional standards.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================
+             INTRO SECTION
+             ========================== -->
+        <section class="about-section site-container">
+            <div class="about-section__media">
+                <div class="about-section__media-frame" aria-hidden="true"></div>
+                <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Justice Statue Silver" class="about-section__media-image">
+            </div>
+            <div class="about-section__content">
+                <span class="section-eyebrow">About Us</span>
+                <div class="section-accent-line"></div>
+                <h2 class="section-heading">
+                    Helping To Overcome And Ease The Legal Burden
+                </h2>
+                <p class="about-section__text">
+                    We are a professional law firm based in the heart of the city, providing comprehensive legal
+                    services to individuals, families, and businesses. Our team is dedicated to delivering excellence
+                    and upholding justice.
+                </p>
+                <p class="about-section__text">
+                    With decades of combined experience, our attorneys are equipped to handle complex cases. We believe
+                    in proactive counsel, clear communication, and relentless advocacy to ensure the best possible
+                    outcomes for our clients.
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Intro / Overcome Burden Section -->
-    <section class="py-24 px-4 md:px-12 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-16 items-start mb-20">
-            <div class="md:w-5/12 vertical-divider pr-0 md:pr-8">
-                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">About Us</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight">Helping To Overcome
-                    And Ease The Legal Burden</h2>
-            </div>
-            <div class="md:w-7/12 flex justify-center md:justify-end">
-                <div class="relative w-full max-w-md">
-                    <div class="absolute inset-0 bg-gray-200 transform translate-x-4 -translate-y-4 -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                        alt="Justice Statue Silver" class="w-full h-auto object-cover shadow-sm">
+
+        <!-- ==========================
+             PARTNERSHIP SECTION
+             ========================== -->
+        <section class="partnership-section site-container">
+            <h3 class="section-heading">Our Partnership</h3>
+            <div class="partnership-section__grid">
+                <div class="partnership-section__item">
+                    <i data-lucide="landmark" class="partnership-section__icon"></i>
+                    <h4 class="partnership-section__title">Lawnet 1</h4>
+                </div>
+                <div class="partnership-section__item">
+                    <i data-lucide="scale" class="partnership-section__icon"></i>
+                    <h4 class="partnership-section__title">Lawnet 2</h4>
+                </div>
+                <div class="partnership-section__item">
+                    <i data-lucide="book-open" class="partnership-section__icon"></i>
+                    <h4 class="partnership-section__title">Lawnet 3</h4>
+                </div>
+                <div class="partnership-section__item">
+                    <i data-lucide="gavel" class="partnership-section__icon"></i>
+                    <h4 class="partnership-section__title">Lawnet 4</h4>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="border-t border-brand-navy/10 pt-16">
-            <p class="text-gray-600 leading-relaxed mb-6 text-center max-w-5xl mx-auto text-sm md:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-            </p>
-            <p class="text-gray-600 leading-relaxed text-center max-w-5xl mx-auto text-sm md:text-base">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-            </p>
-        </div>
-    </section>
 
-    <!-- Partnership Icons Section (Divider Style) -->
-    <section class="py-16 px-4 md:px-12 max-w-7xl mx-auto border-t border-brand-navy/10 border-b">
-        <h3 class="font-serif text-3xl text-brand-navy mb-16 text-center font-semibold">Our Partnership</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
-            <!-- Icon 1 -->
-            <div class="flex flex-col items-center group relative">
-                <i data-lucide="landmark"
-                    class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
-                <h4 class="font-bold text-brand-navy font-serif text-lg">Lorem 1</h4>
-                <div
-                    class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20">
-                </div>
-            </div>
-            <!-- Icon 2 -->
-            <div class="flex flex-col items-center group relative">
-                <i data-lucide="scale"
-                    class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
-                <h4 class="font-bold text-brand-navy font-serif text-lg">Lorem 2</h4>
-                <div
-                    class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20">
-                </div>
-            </div>
-            <!-- Icon 3 -->
-            <div class="flex flex-col items-center group relative">
-                <i data-lucide="book-open"
-                    class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
-                <h4 class="font-bold text-brand-navy font-serif text-lg">Lorem 3</h4>
-                <div
-                    class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-brand-navy/20">
-                </div>
-            </div>
-            <!-- Icon 4 -->
-            <div class="flex flex-col items-center group">
-                <i data-lucide="gavel"
-                    class="w-14 h-14 text-brand-navy mb-4 group-hover:text-brand-gold transition-colors"></i>
-                <h4 class="font-bold text-brand-navy font-serif text-lg">Lorem 4</h4>
-            </div>
-        </div>
-    </section>
-
-    <!-- Welcome Message Section -->
-    <section class="py-24 px-4 md:px-12 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-12 items-center mb-12">
-            <div class="md:w-1/3">
+        <!-- ==========================
+             WELCOME MESSAGE SECTION
+             ========================== -->
+        <section class="welcome-section site-container">
+            <div class="welcome-section__header">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Senior Partner"
-                    class="w-full max-w-sm mx-auto h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                    alt="Senior Partner" class="welcome-section__image">
+                <div>
+                    <span class="section-eyebrow">Welcome Message</span>
+                    <div class="section-accent-line"></div>
+                    <h2 class="section-heading">
+                        Welcome To Kian Associated Advocates
+                    </h2>
+                </div>
             </div>
-            <div class="md:w-2/3">
-                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Welcome
-                    Message</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight mb-6">Hello
-                    People,<br>Welcome To Kian<br>Associated Advocates</h2>
+
+            <div>
+                <p class="welcome-section__text">
+                    We welcome you to Kian Associated Advocates. As a full-service commercial law firm, our commitment
+                    is to walk alongside our clients through intricate legal landscapes, offering pragmatic,
+                    client-tailored advice and representation.
+                </p>
+                <p class="welcome-section__text">
+                    Our team of experienced partners and associates brings together decades of expertise across
+                    corporate finance, dispute resolution, energy, intellectual property, and international trade.
+                </p>
             </div>
-        </div>
+        </section>
 
-        <div>
-            <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-            </p>
-            <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            </p>
-        </div>
-    </section>
 
-    <!-- CTA Banner -->
-    <section class="bg-[#1f2937] text-center py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mb-6">We Help You With Quality Legal Lawyer
+        <!-- ==========================
+             CALL-TO-ACTION SECTION
+             ========================== -->
+        <section class="cta-section">
+            <h2 class="cta-section__heading">
+                We Help You With Quality Legal Lawyer
             </h2>
-            <p class="text-gray-400 mb-8 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Proin gravida nibh vel velit auctor
-                aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
-            <button
-                class="bg-[#9ca3af] text-brand-navy px-8 py-3 rounded text-sm font-bold uppercase tracking-wider hover:bg-white transition-all">
+            <p class="cta-section__text">
+                Contact us today to schedule a consultation and learn how our dedicated team can assist you with your
+                legal needs.
+            </p>
+            <a href="Contact Us.html" class="cta-section__button">
                 Contact Us
-            </button>
-        </div>
-    </section>
+            </a>
+        </section>
 
-    <!-- Vision & Mission -->
-    <section class="py-24 px-4 md:px-12 max-w-7xl mx-auto border-b border-brand-navy/10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-            <!-- Vision -->
-            <div>
-                <h3 class="font-serif text-3xl font-bold text-brand-navy mb-6">Our Vision</h3>
-                <p class="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum.
-                </p>
-                <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                </p>
+
+        <!-- ==========================
+             VISION & MISSION SECTION
+             ========================== -->
+        <section class="vision-mission-section site-container">
+            <div class="vision-mission-section__grid">
+                <div>
+                    <h3 class="vision-mission-section__title">Our Vision</h3>
+                    <p class="vision-mission-section__text">
+                        To be recognized as a premier legal practice known for unyielding standards of integrity,
+                        strategic foresight, and exceptional client advocacy across East Africa and globally.
+                    </p>
+                    <p class="vision-mission-section__text">
+                        We strive to foster enduring partnerships built on trust, innovation, and measurable legal
+                        results.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="vision-mission-section__title">Our Mission</h3>
+                    <p class="vision-mission-section__text">
+                        To empower our clients by providing clear, practical, and highly effective legal solutions that
+                        safeguard their commercial and personal interests.
+                    </p>
+                    <p class="vision-mission-section__text">
+                        We are committed to maintaining the highest ethical standards while delivering timely,
+                        value-driven outcomes for every client we serve.
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <!-- Mission -->
-            <div>
-                <h3 class="font-serif text-3xl font-bold text-brand-navy mb-6">Our Mission</h3>
-                <p class="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum.
-                </p>
-                <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Award Section -->
-    <section class="py-24 px-4 md:px-12 max-w-7xl mx-auto relative">
-        <div class="flex flex-col md:flex-row gap-12 items-center mb-16">
-            <div class="md:w-1/2">
+        <!-- ==========================
+             AWARD SECTION
+             ========================== -->
+        <section class="award-section site-container">
+            <div class="award-section__row">
                 <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Gavel and Books" class="w-full h-64 md:h-80 object-cover shadow-sm">
+                    alt="Gavel and Books" class="award-section__image">
+                <div>
+                    <span class="section-eyebrow">Success Story</span>
+                    <div class="section-accent-line"></div>
+                    <h2 class="section-heading">
+                        Recognized Excellence In Legal Service &amp; Counsel
+                    </h2>
+                </div>
             </div>
-            <div class="md:w-1/2">
-                <span class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Success
-                    Story</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-navy leading-tight">The Best Award Has
-                    Been Given To Northman Legal Lawyer International</h2>
-            </div>
-        </div>
 
-        <div class="flex flex-col-reverse md:flex-row gap-12 items-center">
-            <div class="md:w-2/3">
-                <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.
+            <div>
+                <p class="welcome-section__text">
+                    Through rigorous dedication and innovative litigation strategies, Kian Associated Advocates has
+                    consistently earned recognition among top legal institutions in the region.
                 </p>
-                <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                </p>
-                <div class="flex items-center gap-4 mt-8 pt-6 border-t border-brand-navy/10">
-                    <span class="font-bold text-brand-navy">Peter S.</span>
-                    <span class="text-gray-500 text-sm">Lead Attorney at Northman Legal</span>
+                <div class="award-section__author">
+                    <span class="award-section__author-name">Peter S.</span>
+                    <span class="award-section__author-title">Senior Partner at Kian Associated Advocates</span>
                 </div>
             </div>
-            <div class="md:w-1/3 flex justify-end w-full">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Award Winner" class="w-64 h-auto object-cover shadow-md">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Happy Client / Architecture Section -->
-    <section class="py-20 px-4 md:px-12 max-w-7xl mx-auto border-t border-brand-navy/10">
-        <div class="flex flex-col md:flex-row gap-8 items-end mb-16">
-            <div class="md:w-1/3">
-                <span
-                    class="text-brand-gray text-sm font-medium tracking-widest uppercase mb-2 block">Testimonial</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy">Our Happy Client Say About Us</h2>
-            </div>
-            <div class="md:w-2/3 flex justify-end">
-                <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    class="w-full md:w-[80%] h-48 object-cover sepia-[.3]" alt="Pillars Details">
-            </div>
-        </div>
 
-        <div class="flex flex-col md:flex-row gap-12 items-center">
-            <div class="md:w-1/4 flex justify-center md:justify-start">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                    alt="Client" class="w-40 h-40 rounded-full object-cover shadow-lg border-8 border-white">
-            </div>
-            <div class="md:w-3/4 relative">
-                <i data-lucide="quote"
-                    class="text-brand-navy/5 w-32 h-32 absolute -top-10 -left-10 -z-10 transform rotate-180"></i>
-                <p class="text-gray-600 leading-relaxed mb-6 italic text-lg max-w-3xl">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur."
-                </p>
-                <div class="flex items-center gap-4">
-                    <h4 class="font-bold text-brand-navy">Mathew E.</h4>
-                    <span class="text-brand-gold">★★★★★</span>
-                    <span class="text-sm text-gray-500">CEO at ABC Corp</span>
+        <!-- ==========================
+             TESTIMONIAL SECTION
+             ========================== -->
+        <section class="testimonial-section site-container">
+            <div class="testimonial-section__inner">
+                <div class="testimonial-section__intro">
+                    <span class="section-eyebrow">Testimonial</span>
+                    <div class="section-accent-line"></div>
+                    <h2 class="section-heading">
+                        What Our Clients Say About Us
+                    </h2>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <!-- Footer Banner mimicking the screenshot bottom -->
-    <section class="py-24 px-4 w-full border-t border-gray-100 bg-brand-bg relative mt-auto">
-        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none"
-            style="background-image: url('https://i.pinimg.com/originals/51/fb/76/51fb7609077789d2b4dcfe3de4569802.jpg'); background-size: cover; background-position: center;">
-        </div>
-        <div
-            class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10 text-brand-navy">
-
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
-                    <i data-lucide="map-pin" class="w-5 h-5"></i>
-                </div>
-                <div class="text-sm">
-                    <p>4th Floor DFCU Towers</p>
-                    <p>26 Kyadondo Road, Nakasero</p>
-                    <p>Kampala Uganda</p>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center">
-                <div class="flex items-center justify-center mb-6 gap-2">
-                    <i data-lucide="scale" class="text-brand-navy w-10 h-10"></i>
-                    <span class="font-serif font-bold text-2xl tracking-wide">Kian<span
-                            class="font-sans font-normal text-xs block -mt-1 text-gray-500 tracking-wider">ASSOCIATED<br>ADVOCATES</span></span>
-                </div>
-                <div class="flex gap-4">
-                    <a href="#"
-                        class="w-10 h-10 rounded-full bg-brand-navy text-white flex items-center justify-center hover:bg-brand-gold transition-colors">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                    </a>
-                    <a href="#"
-                        class="w-10 h-10 rounded-full bg-brand-navy text-white flex items-center justify-center hover:bg-brand-gold transition-colors">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                        </svg>
-                    </a>
-                    <a href="#"
-                        class="w-10 h-10 rounded-full bg-brand-navy text-white flex items-center justify-center hover:bg-brand-gold transition-colors">
-                        <i data-lucide="phone" class="w-4 h-4"></i>
-                    </a>
-                </div>
-                <p class="text-xs text-gray-400 mt-6 text-center">Copyright &copy; 2024, Kian Associated Advocates. All
-                    Rights Reserved.</p>
-            </div>
-
-            <div class="flex flex-col gap-4">
-
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-brand-gold text-white flex items-center justify-center">
-                        <i data-lucide="mail" class="w-4 h-4"></i>
+                <blockquote class="testimonial-section__quote">
+                    <i data-lucide="quote" class="testimonial-section__quote-icon" aria-hidden="true"></i>
+                    <div class="testimonial-section__body">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            alt="Client photo" class="testimonial-section__avatar">
+                        <div>
+                            <p class="testimonial-section__text">
+                                "The team at Kian Associated provided exceptional service. They handled our corporate
+                                restructuring with absolute professionalism and clarity, making a complex process feel
+                                smooth and secure."
+                            </p>
+                            <footer>
+                                <cite class="testimonial-section__author">Mathew E.</cite>
+                                <p class="testimonial-section__role">CEO, Enterprise Ltd</p>
+                            </footer>
+                        </div>
                     </div>
-                    <div class="text-sm">
-                        <p>info@kianadvocates.com</p>
+                </blockquote>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ==========================
+         FOOTER SECTION
+         ========================== -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            
+            <div class="site-footer__top">
+                <div class="site-footer__brand-header">
+                    <img src="assets/logo-northman-gold.png" alt="Emblem" class="site-logo__emblem">
+                    <span class="site-logo__text">
+                        Kian
+                        <span class="site-logo__tagline">
+                            ASSOCIATED<br>ADVOCATES
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <hr class="site-footer__divider">
+
+            <div class="site-footer__middle">
+                <!-- About Us -->
+                <div class="footer-col">
+                    <h4 class="footer-col__heading">About Us</h4>
+                    <p class="footer-col__text">
+                        We are a leading law firm dedicated to providing exceptional legal services across various sectors with professionalism and integrity.
+                    </p>
+                    <div class="site-footer__social">
+                        <a href="#" aria-label="LinkedIn" class="site-footer__social-link">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="site-footer__social-link">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="site-footer__social-link">
+                            <i data-lucide="instagram"></i>
+                        </a>
                     </div>
                 </div>
+
+                <!-- Services -->
+                <div class="footer-col">
+                    <h4 class="footer-col__heading">Services</h4>
+                    <ul class="footer-col__list">
+                        <li><a href="Services & Sectors/Coporate, Commercial and M&A.html">Corporate & M&A</a></li>
+                        <li><a href="Services & Sectors/Banking and Finance.html">Banking & Finance</a></li>
+                        <li><a href="Services & Sectors/Dispute Resolution.html">Dispute Resolution</a></li>
+                        <li><a href="Services & Sectors/Employment And Labour.html">Employment & Labour</a></li>
+                        <li><a href="Services & Sectors/Intellectual Property.html">Intellectual Property</a></li>
+                    </ul>
+                </div>
+
+                <!-- Page -->
+                <div class="footer-col">
+                    <h4 class="footer-col__heading">Page</h4>
+                    <ul class="footer-col__list">
+                        <li><a href="About Us.html">Our Firm</a></li>
+                        <li><a href="Our People.html">Our People</a></li>
+                        <li><a href="Contact Us.html">Appointment</a></li>
+                        <li><a href="Documentation.html">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col__heading">Links</h4>
+                    <ul class="footer-col__list">
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="footer-col">
+                    <h4 class="footer-col__heading">Contact Us</h4>
+                    <ul class="footer-col__contact-list">
+                        <li class="footer-col__contact-item">
+                            <i data-lucide="phone" class="footer-col__contact-icon"></i>
+                            <span>+256 7272 8282</span>
+                        </li>
+                        <li class="footer-col__contact-item">
+                            <i data-lucide="map-pin" class="footer-col__contact-icon"></i>
+                            <span>4th Floor DFCU Towers, 26 Kyadondo Road, Nakasero Kampala Uganda</span>
+                        </li>
+                        <li class="footer-col__contact-item">
+                            <i data-lucide="mail" class="footer-col__contact-icon"></i>
+                            <span>info@kianadvocates.com</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-        </div>
-    </section>
+            <hr class="site-footer__divider">
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-brand-navy z-[100] transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto">
-        <div class="p-4 md:px-12 flex justify-between items-center border-b border-white/10">
-            <span class="font-serif font-bold text-xl tracking-wide text-white leading-tight">Kian<span
-                    class="font-sans font-normal text-xs block text-brand-gold tracking-wider mt-1">ASSOCIATED<br>ADVOCATES</span></span>
-            <button id="mobile-menu-close" class="text-white hover:text-brand-gold transition-colors">
-                <i data-lucide="x" class="w-8 h-8"></i>
+            <div class="site-footer__bottom">
+                <p class="site-footer__copyright">
+                    Copyright &copy; 2024 Kian Associated Advocates. All Right Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==========================
+         MOBILE NAVIGATION OVERLAY
+         ========================== -->
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true">
+        <div class="mobile-nav-overlay__header">
+            <span class="site-logo__text site-logo__text--white">
+                Kian
+                <span class="site-logo__tagline site-logo__tagline--gold">
+                    ASSOCIATED<br>ADVOCATES
+                </span>
+            </span>
+            <button id="mobile-nav-close" type="button" class="mobile-nav-close" aria-label="Close navigation menu">
+                <i data-lucide="x"></i>
             </button>
         </div>
-        <div class="px-4 py-8 md:px-12 flex flex-col gap-6">
-            <a href="Index.html" class="text-white text-xl font-medium hover:text-brand-gold transition-colors">Home</a>
-            <a href="About Us.html" class="text-white text-xl font-medium hover:text-brand-gold transition-colors">Our
-                Firm</a>
 
-            <!-- Mobile Accordion for Services -->
-            <div class="mobile-accordion-item">
-                <button
-                    class="mobile-accordion-btn w-full flex justify-between items-center text-white text-xl font-medium hover:text-brand-gold transition-colors pb-2 border-b border-white/10">
-                    Services & Sectors
-                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+        <nav class="mobile-nav-overlay__links" aria-label="Mobile navigation">
+            <a href="index.html" class="mobile-nav-overlay__link">Home</a>
+            <a href="About Us.html" class="mobile-nav-overlay__link">Our Firm</a>
+
+            <div class="mobile-nav-accordion__panel">
+                <button type="button" class="mobile-nav-accordion__trigger">
+                    Services &amp; Sectors
+                    <i data-lucide="chevron-down" class="mobile-nav-accordion__icon"></i>
                 </button>
-                <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                    <div class="py-4 pl-4 flex flex-col gap-4">
-                        <a href="Services Detail.html" class="text-gray-400 hover:text-brand-gold transition-colors">All
-                            Services</a>
-                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Banking & Finance</a>
-                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Corporate, Commercial
-                            and M&A</a>
-                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Dispute Resolution</a>
-                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Employment &
-                            Labour</a>
+                <div class="mobile-nav-accordion__body">
+                    <div class="mobile-nav-accordion__sublinks">
+                        <a href="Services Detail.html" class="mobile-nav-accordion__sublink">All Services</a>
+                        <a href="Services &amp; Sectors/Banking and Finance.html"
+                            class="mobile-nav-accordion__sublink">Banking &amp; Finance</a>
+                        <a href="Services &amp; Sectors/Coporate, Commercial and M&amp;A.html"
+                            class="mobile-nav-accordion__sublink">Corporate, Commercial and M&amp;A</a>
+                        <a href="Services &amp; Sectors/Dispute Resolution.html"
+                            class="mobile-nav-accordion__sublink">Dispute Resolution</a>
+                        <a href="Services &amp; Sectors/Employment And Labour.html"
+                            class="mobile-nav-accordion__sublink">Employment &amp; Labour</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Mobile Accordion for Insights -->
-            <div class="mobile-accordion-item">
-                <button
-                    class="mobile-accordion-btn w-full flex justify-between items-center text-white text-xl font-medium hover:text-brand-gold transition-colors pb-2 border-b border-white/10">
+            <div class="mobile-nav-accordion__panel">
+                <button type="button" class="mobile-nav-accordion__trigger">
                     Insights
-                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    <i data-lucide="chevron-down" class="mobile-nav-accordion__icon"></i>
                 </button>
-                <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                    <div class="py-4 pl-4 flex flex-col gap-4">
-                        <a href="Documentation.html"
-                            class="text-gray-400 hover:text-brand-gold transition-colors">Publications</a>
-                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">News</a>
-                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Legal Updates</a>
+                <div class="mobile-nav-accordion__body">
+                    <div class="mobile-nav-accordion__sublinks">
+                        <a href="Documentation.html" class="mobile-nav-accordion__sublink">Publications</a>
+                        <a href="#" class="mobile-nav-accordion__sublink">News</a>
+                        <a href="#" class="mobile-nav-accordion__sublink">Legal Updates</a>
                     </div>
                 </div>
             </div>
 
-            <a href="#"
-                class="text-white text-xl font-medium hover:text-brand-gold transition-colors border-b border-white/10 pb-2">Events</a>
-            <a href="#"
-                class="text-white text-xl font-medium hover:text-brand-gold transition-colors border-b border-white/10 pb-2">Careers</a>
-            <a href="Contact Us.html"
-                class="text-white text-xl font-medium hover:text-brand-gold transition-colors border-b border-white/10 pb-2">Contacts</a>
 
-            <a href="Contact Us.html"
-                class="mt-8 inline-flex items-center justify-center gap-2 bg-brand-gold text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-brand-navy transition-colors w-full shadow-md">
-                <i data-lucide="phone" class="w-4 h-4"></i>
+
+            <a href="Contact Us.html" class="mobile-nav-overlay__link mobile-nav-overlay__link--border">Contacts</a>
+
+            <a href="Contact Us.html" class="mobile-nav-overlay__cta">
+                <i data-lucide="phone"></i>
                 Request Appointment
             </a>
-        </div>
+        </nav>
     </div>
 
-    <!-- Main JS -->
-    <script src="js/main.js"></script>
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
