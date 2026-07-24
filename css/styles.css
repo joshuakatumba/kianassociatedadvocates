@@ -940,7 +940,7 @@ h6 {
 .hero-section {
     position: relative;
     width: 100%;
-    padding-top: 8rem;
+    padding-top: 7rem;
     padding-bottom: 3rem;
     overflow: hidden;
 }
@@ -952,60 +952,89 @@ h6 {
     }
 }
 
+/* Mobile: stack content and image vertically */
 .hero-section__inner {
     position: relative;
     display: flex;
-    align-items: center;
-    min-height: 480px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
+/* Desktop: side-by-side with absolute image */
+@media (min-width: 768px) {
+    .hero-section__inner {
+        flex-direction: row;
+        align-items: center;
+        min-height: 520px;
+    }
+}
+
+/* Mobile: image in normal flow, full width */
 .hero-section__media {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 75%;
-    z-index: 0;
+    width: 100%;
+    order: 2; /* image below text on mobile */
 }
 
+/* Desktop: restore absolute positioning on right */
 @media (min-width: 768px) {
     .hero-section__media {
-        width: 60%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 55%;
+        order: 0;
     }
 }
 
 .hero-section__media-image {
     width: 100%;
-    height: 100%;
+    height: 280px;
     object-fit: contain;
-    object-position: right bottom;
+    object-position: center bottom;
+}
+
+@media (min-width: 768px) {
+    .hero-section__media-image {
+        height: 100%;
+        object-position: right bottom;
+    }
 }
 
 .hero-section__content {
     position: relative;
     z-index: 10;
-    max-width: 36rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    order: 1; /* text first on mobile */
+}
+
+@media (min-width: 768px) {
+    .hero-section__content {
+        max-width: 40rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        order: 0;
+    }
 }
 
 .hero-section__headline {
     font-family: var(--font-serif);
-    font-size: 2.75rem;
+    font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.15;
     color: var(--brand-navy);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {
     .hero-section__headline {
         font-size: 4rem;
+        margin-bottom: 2rem;
     }
 }
 
 .hero-section__headline-highlight {
-    color: #9e9564; /* Olive gold matching the design */
+    color: #9e9564;
     display: block;
 }
 
@@ -1022,6 +1051,7 @@ h6 {
 .hero-section__cta:hover {
     background-color: var(--brand-gold);
 }
+
 
 /* Subpage Hero Banners */
 .subpage-hero {
