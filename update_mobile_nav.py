@@ -39,7 +39,9 @@ def get_mobile_nav_block(prefix):
     # SERVICES header
     html.append('    <span style="padding: 0.5rem 1.25rem; font-weight: 600; color: var(--brand-gold); font-size: 0.875rem; display: block; text-transform: uppercase;">Services</span>')
     for link, name in services:
-        html.append(f'    <a href="{prefix}Services &amp; Sectors/{link}" class="mobile-nav-accordion__sublink">{name}</a>')
+        link_escaped = link.replace("&", "&amp;")
+        name_escaped = name.replace("&", "&amp;")
+        html.append(f'    <a href="{prefix}Services &amp; Sectors/{link_escaped}" class="mobile-nav-accordion__sublink">{name_escaped}</a>')
         
     # SECTORS header
     html.append('    <span style="padding: 0.5rem 1.25rem; font-weight: 600; color: var(--brand-gold); font-size: 0.875rem; display: block; text-transform: uppercase; margin-top: 0.5rem;">Sectors</span>')

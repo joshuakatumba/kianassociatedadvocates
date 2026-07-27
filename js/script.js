@@ -79,7 +79,8 @@ function setAccordionBodyHeight(bodyElement, height) {
  */
 function getAccordionBody(panel) {
     return panel.querySelector('.service-accordion__body')
-        || panel.querySelector('.accordion-content');
+        || panel.querySelector('.accordion-content')
+        || panel.querySelector('.mobile-nav-accordion__body');
 }
 
 /**
@@ -287,12 +288,12 @@ function bindSectorTabListeners() {
 
             // Get target pane ID
             const targetId = btn.getAttribute('data-target');
-            
+
             // Hide all panes
             document.querySelectorAll('.sector-tab-pane').forEach(pane => {
                 pane.classList.remove('active');
             });
-            
+
             // Show target pane
             const targetPane = document.getElementById(targetId);
             if (targetPane) {
@@ -325,10 +326,50 @@ function initializeSite() {
     bindServiceAccordionListeners();
     bindMobileNavListeners();
     bindMobileNavAccordionListeners();
-    bindSectorTabListeners();
+    if (typeof bindSectorTabListeners === 'function') {
+        bindSectorTabListeners();
+    }
     initializeExpandedAccordions();
     initializeFormHandlers();
+    bindContactForm();
 }
 
 // Bootstrap application on DOM ready
 document.addEventListener('DOMContentLoaded', initializeSite);
+
+/* ==========================
+   EmailJS Form Handling
+   ========================== */
+
+function bindContactForm() {
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm) {
+        // Initialize EmailJS
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("F0fdWC6WNW1TkrSA1");
+        }
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Send the form using the provided Service ID and Template ID
+            emailjs.sendForm('service_wnh7o0q', 'template_gwuni8g', this)
+                .then(() => {
+                    alert('SUCCESS! Your message has been sent successfully.');
+                    contactForm.reset();
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                }, (error) => {
+                    alert('FAILED to send the message. Please try again later.\n' + JSON.stringify(error));
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+}
