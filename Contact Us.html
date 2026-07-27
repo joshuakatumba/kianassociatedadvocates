@@ -17,7 +17,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=22">
+    <link rel="stylesheet" href="css/styles.css?v=23">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 
@@ -98,36 +98,37 @@
                                     </ul>
                                 </div>
 
+                                                                <!-- Sectors Column -->
                                 <div class="site-nav-mega-menu__column">
                                     <h3 class="site-nav-mega-menu__heading">
                                         <span class="site-nav-mega-menu__heading-indicator" aria-hidden="true"></span>
                                         SECTORS
                                     </h3>
                                     <ul class="site-nav-mega-menu__list">
-                                        <li><a href="Aviation.html" class="site-nav-mega-menu__link">Aviation</a></li>
-                                        <li><a href="Construction.html"
+                                        <li><a href="Sectors/Aviation.html" class="site-nav-mega-menu__link">Aviation</a></li>
+                                        <li><a href="Sectors/Construction.html"
                                                 class="site-nav-mega-menu__link">Construction</a></li>
-                                        <li><a href="Consumer Goods.html" class="site-nav-mega-menu__link">Consumer
+                                        <li><a href="Sectors/Consumer Goods.html" class="site-nav-mega-menu__link">Consumer
                                                 Goods</a></li>
-                                        <li><a href="Education.html" class="site-nav-mega-menu__link">Education</a></li>
-                                        <li><a href="Energy.html" class="site-nav-mega-menu__link">Energy</a></li>
-                                        <li><a href="Financial Institutions.html"
+                                        <li><a href="Sectors/Education.html" class="site-nav-mega-menu__link">Education</a></li>
+                                        <li><a href="Sectors/Energy.html" class="site-nav-mega-menu__link">Energy</a></li>
+                                        <li><a href="Sectors/Financial Institutions.html"
                                                 class="site-nav-mega-menu__link">Financial Institutions</a></li>
-                                        <li><a href="Hotels and Leisure.html" class="site-nav-mega-menu__link">Hotels
+                                        <li><a href="Sectors/Hotels and Leisure.html" class="site-nav-mega-menu__link">Hotels
                                                 &amp; Leisure</a></li>
-                                        <li><a href="Industrials.html" class="site-nav-mega-menu__link">Industrials</a>
+                                        <li><a href="Sectors/Industrials.html" class="site-nav-mega-menu__link">Industrials</a>
                                         </li>
-                                        <li><a href="Infrastructure.html"
+                                        <li><a href="Sectors/Infrastructure.html"
                                                 class="site-nav-mega-menu__link">Infrastructure</a></li>
-                                        <li><a href="Insurance.html" class="site-nav-mega-menu__link">Insurance</a></li>
-                                        <li><a href="Mining.html" class="site-nav-mega-menu__link">Mining</a></li>
-                                        <li><a href="Pharmaceuticals and Healthcare.html"
+                                        <li><a href="Sectors/Insurance.html" class="site-nav-mega-menu__link">Insurance</a></li>
+                                        <li><a href="Sectors/Mining.html" class="site-nav-mega-menu__link">Mining</a></li>
+                                        <li><a href="Sectors/Pharmaceuticals and Healthcare.html"
                                                 class="site-nav-mega-menu__link">Pharmaceuticals &amp; Healthcare</a>
                                         </li>
-                                        <li><a href="Ports, Transport and Logistics.html"
+                                        <li><a href="Sectors/Ports, Transport and Logistics.html"
                                                 class="site-nav-mega-menu__link">Ports, Transport &amp; Logistics</a>
                                         </li>
-                                        <li><a href="TMT.html" class="site-nav-mega-menu__link">TMT</a></li>
+                                        <li><a href="Sectors/TMT.html" class="site-nav-mega-menu__link">TMT</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -210,13 +211,13 @@
                     <form class="contact-form">
                         <div class="contact-form__row">
                             <div class="contact-form__group">
-                                <label for="firstName" class="contact-form__label">First Name*</label>
+                                <label for="firstName" class="contact-form__label">First Name</label>
                                 <input type="text" id="firstName" placeholder="Enter first name"
                                     class="contact-form__input" required>
                             </div>
 
                             <div class="contact-form__group">
-                                <label for="lastName" class="contact-form__label">Last Name*</label>
+                                <label for="lastName" class="contact-form__label">Last Name</label>
                                 <input type="text" id="lastName" placeholder="Enter last name"
                                     class="contact-form__input" required>
                             </div>
@@ -224,13 +225,13 @@
 
                         <div class="contact-form__row">
                             <div class="contact-form__group">
-                                <label for="phone" class="contact-form__label">Your Phone*</label>
+                                <label for="phone" class="contact-form__label">Your Phone</label>
                                 <input type="tel" id="phone" placeholder="Enter your phone" class="contact-form__input"
                                     required>
                             </div>
 
                             <div class="contact-form__group">
-                                <label for="email" class="contact-form__label">Your Email*</label>
+                                <label for="email" class="contact-form__label">Your Email</label>
                                 <input type="email" id="email" placeholder="Enter your email"
                                     class="contact-form__input" required>
                             </div>
@@ -286,13 +287,12 @@
 
     </main>
 
-
     <!-- ==========================
          FOOTER SECTION
          ========================== -->
     <footer class="site-footer">
         <div class="site-footer__inner">
-            
+
             <div class="site-footer__top">
                 <div class="site-footer__brand-header">
                     <img src="assets/logo-northman-gold.png" alt="Emblem" class="site-logo__emblem">
@@ -312,17 +312,43 @@
                 <div class="footer-col">
                     <h4 class="footer-col__heading">About Us</h4>
                     <p class="footer-col__text">
-                        We are a leading law firm dedicated to providing exceptional legal services across various sectors with professionalism and integrity.
+                        We are a leading law firm dedicated to providing exceptional legal services across various
+                        sectors with professionalism and integrity.
                     </p>
                     <div class="site-footer__social">
+                        <a href="#" aria-label="Facebook" class="site-footer__social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
                         <a href="#" aria-label="LinkedIn" class="site-footer__social-link">
-                            <i data-lucide="linkedin"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
                         </a>
                         <a href="#" aria-label="Twitter" class="site-footer__social-link">
-                            <i data-lucide="twitter"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                            </svg>
                         </a>
                         <a href="#" aria-label="Instagram" class="site-footer__social-link">
-                            <i data-lucide="instagram"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -410,6 +436,7 @@
             <a href="index.html" class="mobile-nav-overlay__link">Home</a>
             <a href="About Us.html" class="mobile-nav-overlay__link">Our Firm</a>
 
+            <!-- Mobile Services Accordion -->
             <div class="mobile-nav-accordion__panel">
                 <button type="button" class="mobile-nav-accordion__trigger">
                     Services &amp; Sectors
@@ -430,6 +457,7 @@
                 </div>
             </div>
 
+            <!-- Mobile Insights Accordion -->
             <div class="mobile-nav-accordion__panel">
                 <button type="button" class="mobile-nav-accordion__trigger">
                     Insights
@@ -454,6 +482,7 @@
             </a>
         </nav>
     </div>
+
 
     <!-- Main JavaScript -->
     <script src="js/script.js"></script>

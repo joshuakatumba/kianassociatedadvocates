@@ -271,6 +271,38 @@ function initializeFormHandlers() {
 
 
 /* ==========================
+   Sector Tab Functions
+   ========================== */
+
+function bindSectorTabListeners() {
+    const tabBtns = document.querySelectorAll('.sector-tab-btn');
+    if (tabBtns.length === 0) return;
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active from all buttons
+            tabBtns.forEach(b => b.classList.remove('active'));
+            // Add active to clicked button
+            btn.classList.add('active');
+
+            // Get target pane ID
+            const targetId = btn.getAttribute('data-target');
+            
+            // Hide all panes
+            document.querySelectorAll('.sector-tab-pane').forEach(pane => {
+                pane.classList.remove('active');
+            });
+            
+            // Show target pane
+            const targetPane = document.getElementById(targetId);
+            if (targetPane) {
+                targetPane.classList.add('active');
+            }
+        });
+    });
+}
+
+/* ==========================
    Initialization
    ========================== */
 
@@ -293,6 +325,7 @@ function initializeSite() {
     bindServiceAccordionListeners();
     bindMobileNavListeners();
     bindMobileNavAccordionListeners();
+    bindSectorTabListeners();
     initializeExpandedAccordions();
     initializeFormHandlers();
 }
