@@ -338,6 +338,75 @@ function initializeSite() {
 document.addEventListener('DOMContentLoaded', initializeSite);
 
 /* ==========================
+   Toast Notification System
+   ========================== */
+
+/**
+ * Shows a premium slide-in toast notification.
+ * @param {'success'|'error'} type - Toast type (controls color/icon).
+ * @param {string} title - Bold heading text.
+ * @param {string} message - Secondary description text.
+ */
+function showToast(type, title, message) {
+    // Remove any existing toasts
+    const existing = document.querySelector('.toast-notification');
+    if (existing) existing.remove();
+
+    const icons = {
+        success: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`,
+        error: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`
+    };
+
+    const toast = document.createElement('div');
+    toast.className = `toast-notification toast--${type}`;
+    toast.setAttribute('role', 'alert');
+    toast.innerHTML = `
+        <div class="toast-notification__icon">${icons[type]}</div>
+        <div class="toast-notification__content">
+            <div class="toast-notification__title">${title}</div>
+            <div class="toast-notification__message">${message}</div>
+        </div>
+        <button type="button" class="toast-notification__close" aria-label="Dismiss notification">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="toast-notification__progress">
+            <div class="toast-notification__progress-bar"></div>
+        </div>
+    `;
+
+    document.body.appendChild(toast);
+
+    // Trigger slide-in
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            toast.classList.add('toast--visible');
+        });
+    });
+
+    // Auto-dismiss after 5s
+    const autoDismiss = setTimeout(() => dismissToast(toast), 5000);
+
+    // Manual close
+    toast.querySelector('.toast-notification__close').addEventListener('click', () => {
+        clearTimeout(autoDismiss);
+        dismissToast(toast);
+    });
+}
+
+/**
+ * Dismisses a toast notification with a slide-out animation.
+ * @param {HTMLElement} toast - The toast element to dismiss.
+ */
+function dismissToast(toast) {
+    if (!toast || !toast.parentNode) return;
+    toast.classList.remove('toast--visible');
+    toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+    // Fallback removal
+    setTimeout(() => { if (toast.parentNode) toast.remove(); }, 600);
+}
+
+
+/* ==========================
    EmailJS Form Handling
    ========================== */
 
@@ -354,22 +423,38 @@ function bindContactForm() {
             event.preventDefault();
 
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerText;
-            submitBtn.innerText = 'Sending...';
+            const btnLabel = submitBtn.querySelector('span');
+            const btnIcon = submitBtn.querySelector('svg');
+            const originalText = btnLabel ? btnLabel.innerText : submitBtn.innerText;
+
+            // Set loading state
+            if (btnLabel) btnLabel.innerText = 'Sending...';
+            if (btnIcon) btnIcon.style.display = 'none';
             submitBtn.disabled = true;
 
             // Send the form using the provided Service ID and Template ID
             emailjs.sendForm('service_wnh7o0q', 'template_gwuni8g', this)
                 .then(() => {
-                    alert('SUCCESS! Your message has been sent successfully.');
+                    showToast(
+                        'success',
+                        'Message Sent Successfully!',
+                        'Thank you for reaching out. Our team will get back to you within 24 hours.'
+                    );
                     contactForm.reset();
-                    submitBtn.innerText = originalText;
+                    if (btnLabel) btnLabel.innerText = originalText;
+                    if (btnIcon) btnIcon.style.display = '';
                     submitBtn.disabled = false;
                 }, (error) => {
-                    alert('FAILED to send the message. Please try again later.\n' + JSON.stringify(error));
-                    submitBtn.innerText = originalText;
+                    showToast(
+                        'error',
+                        'Message Failed to Send',
+                        'Something went wrong. Please try again later or contact us directly by phone.'
+                    );
+                    if (btnLabel) btnLabel.innerText = originalText;
+                    if (btnIcon) btnIcon.style.display = '';
                     submitBtn.disabled = false;
                 });
         });
     }
 }
+

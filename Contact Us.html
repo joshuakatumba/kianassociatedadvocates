@@ -17,7 +17,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=23">
+    <link rel="stylesheet" href="css/styles.css?v=24">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 
@@ -98,30 +98,38 @@
                                     </ul>
                                 </div>
 
-                                                                <!-- Sectors Column -->
+                                <!-- Sectors Column -->
                                 <div class="site-nav-mega-menu__column">
                                     <h3 class="site-nav-mega-menu__heading">
                                         <span class="site-nav-mega-menu__heading-indicator" aria-hidden="true"></span>
                                         SECTORS
                                     </h3>
                                     <ul class="site-nav-mega-menu__list">
-                                        <li><a href="Sectors/Aviation.html" class="site-nav-mega-menu__link">Aviation</a></li>
+                                        <li><a href="Sectors/Aviation.html"
+                                                class="site-nav-mega-menu__link">Aviation</a></li>
                                         <li><a href="Sectors/Construction.html"
                                                 class="site-nav-mega-menu__link">Construction</a></li>
-                                        <li><a href="Sectors/Consumer Goods.html" class="site-nav-mega-menu__link">Consumer
+                                        <li><a href="Sectors/Consumer Goods.html"
+                                                class="site-nav-mega-menu__link">Consumer
                                                 Goods</a></li>
-                                        <li><a href="Sectors/Education.html" class="site-nav-mega-menu__link">Education</a></li>
-                                        <li><a href="Sectors/Energy.html" class="site-nav-mega-menu__link">Energy</a></li>
+                                        <li><a href="Sectors/Education.html"
+                                                class="site-nav-mega-menu__link">Education</a></li>
+                                        <li><a href="Sectors/Energy.html" class="site-nav-mega-menu__link">Energy</a>
+                                        </li>
                                         <li><a href="Sectors/Financial Institutions.html"
                                                 class="site-nav-mega-menu__link">Financial Institutions</a></li>
-                                        <li><a href="Sectors/Hotels and Leisure.html" class="site-nav-mega-menu__link">Hotels
+                                        <li><a href="Sectors/Hotels and Leisure.html"
+                                                class="site-nav-mega-menu__link">Hotels
                                                 &amp; Leisure</a></li>
-                                        <li><a href="Sectors/Industrials.html" class="site-nav-mega-menu__link">Industrials</a>
+                                        <li><a href="Sectors/Industrials.html"
+                                                class="site-nav-mega-menu__link">Industrials</a>
                                         </li>
                                         <li><a href="Sectors/Infrastructure.html"
                                                 class="site-nav-mega-menu__link">Infrastructure</a></li>
-                                        <li><a href="Sectors/Insurance.html" class="site-nav-mega-menu__link">Insurance</a></li>
-                                        <li><a href="Sectors/Mining.html" class="site-nav-mega-menu__link">Mining</a></li>
+                                        <li><a href="Sectors/Insurance.html"
+                                                class="site-nav-mega-menu__link">Insurance</a></li>
+                                        <li><a href="Sectors/Mining.html" class="site-nav-mega-menu__link">Mining</a>
+                                        </li>
                                         <li><a href="Sectors/Pharmaceuticals and Healthcare.html"
                                                 class="site-nav-mega-menu__link">Pharmaceuticals &amp; Healthcare</a>
                                         </li>
@@ -145,7 +153,7 @@
                     </a>
                     <div class="site-nav-dropdown__panel">
                         <div class="site-nav-dropdown__menu">
-                            <a href="Documentation.html" class="site-nav-dropdown__item">Publications</a>
+                            <a href="Publications.html" class="site-nav-dropdown__item">Publications</a>
                             <a href="#" class="site-nav-dropdown__item">News</a>
                             <a href="#" class="site-nav-dropdown__item">Legal Updates</a>
                         </div>
@@ -226,8 +234,8 @@
                         <div class="contact-form__row">
                             <div class="contact-form__group">
                                 <label for="phone" class="contact-form__label">Your Phone</label>
-                                <input type="tel" id="phone" name="user_phone" placeholder="Enter your phone" class="contact-form__input"
-                                    required>
+                                <input type="tel" id="phone" name="user_phone" placeholder="Enter your phone"
+                                    class="contact-form__input" required>
                             </div>
 
                             <div class="contact-form__group">
@@ -245,8 +253,14 @@
                                 class="contact-form__textarea"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn--primary contact-form__submit">
-                            Send Message
+                        <button type="submit" id="contact-submit-btn" class="contact-form__submit">
+                            <span>Send Message</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
                         </button>
                     </form>
                 </div>
@@ -372,7 +386,7 @@
                         <li><a href="About Us.html">Our Firm</a></li>
                         <li><a href="Our People.html">Our People</a></li>
                         <li><a href="Contact Us.html">Appointment</a></li>
-                        <li><a href="Documentation.html">Documentation</a></li>
+                        <li><a href="Publications.html">Publications</a></li>
                     </ul>
                 </div>
 
@@ -444,30 +458,44 @@
                 </button>
                 <div class="mobile-nav-accordion__body">
                     <div class="mobile-nav-accordion__sublinks">
-                        <span style="padding: 0.5rem 1.25rem; font-weight: 600; color: var(--brand-gold); font-size: 0.875rem; display: block; text-transform: uppercase;">Services</span>
-                        <a href="Services &amp; Sectors/Banking and Finance.html" class="mobile-nav-accordion__sublink">Banking &amp; Finance</a>
-                        <a href="Services &amp; Sectors/Coporate, Commercial and M&amp;A.html" class="mobile-nav-accordion__sublink">Corporate, Commercial and M&amp;A</a>
-                        <a href="Services &amp; Sectors/Dispute Resolution.html" class="mobile-nav-accordion__sublink">Dispute Resolution</a>
-                        <a href="Services &amp; Sectors/Employment And Labour.html" class="mobile-nav-accordion__sublink">Employment &amp; Labour</a>
-                        <a href="Services &amp; Sectors/Immigration &amp; NGOs.html" class="mobile-nav-accordion__sublink">Immigration &amp; NGOs</a>
-                        <a href="Services &amp; Sectors/Intellectual Property.html" class="mobile-nav-accordion__sublink">Intellectual Property</a>
-                        <a href="Services &amp; Sectors/Oil &amp; Gas And Infrastructure.html" class="mobile-nav-accordion__sublink">Oil &amp; Gas, Energy &amp; Infrastructure</a>
+                        <span
+                            style="padding: 0.5rem 1.25rem; font-weight: 600; color: var(--brand-gold); font-size: 0.875rem; display: block; text-transform: uppercase;">Services</span>
+                        <a href="Services &amp; Sectors/Banking and Finance.html"
+                            class="mobile-nav-accordion__sublink">Banking &amp; Finance</a>
+                        <a href="Services &amp; Sectors/Coporate, Commercial and M&amp;A.html"
+                            class="mobile-nav-accordion__sublink">Corporate, Commercial and M&amp;A</a>
+                        <a href="Services &amp; Sectors/Dispute Resolution.html"
+                            class="mobile-nav-accordion__sublink">Dispute Resolution</a>
+                        <a href="Services &amp; Sectors/Employment And Labour.html"
+                            class="mobile-nav-accordion__sublink">Employment &amp; Labour</a>
+                        <a href="Services &amp; Sectors/Immigration &amp; NGOs.html"
+                            class="mobile-nav-accordion__sublink">Immigration &amp; NGOs</a>
+                        <a href="Services &amp; Sectors/Intellectual Property.html"
+                            class="mobile-nav-accordion__sublink">Intellectual Property</a>
+                        <a href="Services &amp; Sectors/Oil &amp; Gas And Infrastructure.html"
+                            class="mobile-nav-accordion__sublink">Oil &amp; Gas, Energy &amp; Infrastructure</a>
                         <a href="Services &amp; Sectors/Tax.html" class="mobile-nav-accordion__sublink">Tax</a>
-                        <a href="Services &amp; Sectors/Technology, Media &amp; Communication .html" class="mobile-nav-accordion__sublink">Technology, Media &amp; Telecommunication (TMT)</a>
-                        <span style="padding: 0.5rem 1.25rem; font-weight: 600; color: var(--brand-gold); font-size: 0.875rem; display: block; text-transform: uppercase; margin-top: 0.5rem;">Sectors</span>
+                        <a href="Services &amp; Sectors/Technology, Media &amp; Communication .html"
+                            class="mobile-nav-accordion__sublink">Technology, Media &amp; Telecommunication (TMT)</a>
+                        <span
+                            style="padding: 0.5rem 1.25rem; font-weight: 600; color: var(--brand-gold); font-size: 0.875rem; display: block; text-transform: uppercase; margin-top: 0.5rem;">Sectors</span>
                         <a href="Sectors/Aviation.html" class="mobile-nav-accordion__sublink">Aviation</a>
                         <a href="Sectors/Construction.html" class="mobile-nav-accordion__sublink">Construction</a>
                         <a href="Sectors/Consumer Goods.html" class="mobile-nav-accordion__sublink">Consumer Goods</a>
                         <a href="Sectors/Education.html" class="mobile-nav-accordion__sublink">Education</a>
                         <a href="Sectors/Energy.html" class="mobile-nav-accordion__sublink">Energy</a>
-                        <a href="Sectors/Financial Institutions.html" class="mobile-nav-accordion__sublink">Financial Institutions</a>
-                        <a href="Sectors/Hotels and Leisure.html" class="mobile-nav-accordion__sublink">Hotels and Leisure</a>
+                        <a href="Sectors/Financial Institutions.html" class="mobile-nav-accordion__sublink">Financial
+                            Institutions</a>
+                        <a href="Sectors/Hotels and Leisure.html" class="mobile-nav-accordion__sublink">Hotels and
+                            Leisure</a>
                         <a href="Sectors/Industrials.html" class="mobile-nav-accordion__sublink">Industrials</a>
                         <a href="Sectors/Infrastructure.html" class="mobile-nav-accordion__sublink">Infrastructure</a>
                         <a href="Sectors/Insurance.html" class="mobile-nav-accordion__sublink">Insurance</a>
                         <a href="Sectors/Mining.html" class="mobile-nav-accordion__sublink">Mining</a>
-                        <a href="Sectors/Pharmaceuticals and Healthcare.html" class="mobile-nav-accordion__sublink">Pharmaceuticals and Healthcare</a>
-                        <a href="Sectors/Ports, Transport and Logistics.html" class="mobile-nav-accordion__sublink">Ports, Transport and Logistics</a>
+                        <a href="Sectors/Pharmaceuticals and Healthcare.html"
+                            class="mobile-nav-accordion__sublink">Pharmaceuticals and Healthcare</a>
+                        <a href="Sectors/Ports, Transport and Logistics.html"
+                            class="mobile-nav-accordion__sublink">Ports, Transport and Logistics</a>
                         <a href="Sectors/TMT.html" class="mobile-nav-accordion__sublink">TMT</a>
                     </div>
                 </div>
@@ -481,7 +509,7 @@
                 </button>
                 <div class="mobile-nav-accordion__body">
                     <div class="mobile-nav-accordion__sublinks">
-                        <a href="Documentation.html" class="mobile-nav-accordion__sublink">Publications</a>
+                        <a href="Publications.html" class="mobile-nav-accordion__sublink">Publications</a>
                         <a href="#" class="mobile-nav-accordion__sublink">News</a>
                         <a href="#" class="mobile-nav-accordion__sublink">Legal Updates</a>
                     </div>
