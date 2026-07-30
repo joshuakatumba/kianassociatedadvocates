@@ -1289,8 +1289,8 @@ h6 {
 }
 
 .contact-form__label {
-    font-family: var(--font-serif);
-    font-weight: 700;
+    font-family: var(--font-sans);
+    font-weight: 600;
     font-size: 1.125rem;
     color: var(--brand-navy);
 }
@@ -1303,7 +1303,7 @@ h6 {
     color: var(--brand-navy);
     font-size: 0.875rem;
     font-family: var(--font-sans);
-    border-radius: var(--border-radius-sm);
+    border-radius: 8px;
     transition: border-color var(--transition-fast);
 }
 
