@@ -900,7 +900,8 @@ h6 {
     transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.site-nav-dropdown__item:hover {
+.site-nav-dropdown__item:hover,
+.site-nav-dropdown__item.active {
     color: var(--brand-gold);
     background-color: #f9fafb;
 }
@@ -973,7 +974,8 @@ h6 {
 /* Mobile: image in normal flow, full width */
 .hero-section__media {
     width: 100%;
-    order: 2; /* image below text on mobile */
+    order: 2;
+    /* image below text on mobile */
 }
 
 /* Desktop: restore absolute positioning on right */
@@ -1005,7 +1007,8 @@ h6 {
 .hero-section__content {
     position: relative;
     z-index: 10;
-    order: 1; /* text first on mobile */
+    order: 1;
+    /* text first on mobile */
 }
 
 @media (min-width: 768px) {
@@ -1506,8 +1509,13 @@ h6 {
 }
 
 @keyframes toast-progress {
-    from { transform: scaleX(1); }
-    to   { transform: scaleX(0); }
+    from {
+        transform: scaleX(1);
+    }
+
+    to {
+        transform: scaleX(0);
+    }
 }
 
 .map-container {
@@ -3330,7 +3338,8 @@ h6 {
 
 .sector-content {
     background-color: var(--brand-bg);
-    padding-top: 1px; /* prevent margin collapse */
+    padding-top: 1px;
+    /* prevent margin collapse */
 }
 
 .sector-tabs-container {
