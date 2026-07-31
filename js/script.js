@@ -332,6 +332,8 @@ function initializeSite() {
     initializeExpandedAccordions();
     initializeFormHandlers();
     bindContactForm();
+    initializeCookieBanner();
+    initializeFlatpickr();
 }
 
 // Bootstrap application on DOM ready
@@ -458,3 +460,66 @@ function bindContactForm() {
     }
 }
 
+
+/* ==========================
+   Flatpickr Initialization
+   ========================== */
+
+function initializeFlatpickr() {
+    if (typeof flatpickr !== 'undefined') {
+        const dateInput = document.querySelector('.flatpickr-date');
+        const timeInput = document.querySelector('.flatpickr-time');
+        
+        if (dateInput) {
+            flatpickr(dateInput, {
+                dateFormat: "m/d/Y",
+                minDate: "today"
+            });
+        }
+        
+        if (timeInput) {
+            flatpickr(timeInput, {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "h:i K"
+            });
+        }
+    }
+}
+
+/* ==========================
+   Cookie Banner Handling
+   ========================== */
+
+function initializeCookieBanner() {
+    const cookieConsent = localStorage.getItem('kian_cookie_consent');
+    if (cookieConsent) return;
+
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.innerHTML = `
+        <div class="cookie-banner__content">
+            <div class="cookie-banner__text">
+                <p>We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept", you consent to our use of cookies.</p>
+            </div>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--decline" id="cookie-decline">Decline</button>
+                <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    document.getElementById('cookie-accept').addEventListener('click', () => {
+        localStorage.setItem('kian_cookie_consent', 'accepted');
+        banner.classList.add('cookie-banner--hiding');
+        setTimeout(() => banner.remove(), 300);
+    });
+
+    document.getElementById('cookie-decline').addEventListener('click', () => {
+        localStorage.setItem('kian_cookie_consent', 'declined');
+        banner.classList.add('cookie-banner--hiding');
+        setTimeout(() => banner.remove(), 300);
+    });
+}

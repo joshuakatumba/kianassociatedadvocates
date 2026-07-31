@@ -3321,8 +3321,7 @@ h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    mix-blend-mode: multiply;
-    opacity: 0.8;
+    opacity: 0.4;
 }
 
 .sector-hero__bg-overlay {
@@ -3868,4 +3867,95 @@ h6 {
 /* Card visibility for filter */
 .insights-card[data-hidden="true"] {
     display: none;
+}
+
+/* ==========================
+   Cookie Banner
+   ========================== */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--brand-white);
+    box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    padding: 1.5rem;
+    border-top: 2px solid var(--brand-gold);
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.cookie-banner--hiding {
+    animation: slideDown 0.3s ease-in forwards;
+}
+
+.cookie-banner__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .cookie-banner__content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.cookie-banner__text p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--brand-gray);
+    line-height: 1.6;
+    font-family: var(--font-sans);
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.cookie-banner__btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: var(--font-sans);
+}
+
+.cookie-banner__btn--accept {
+    background-color: var(--brand-navy);
+    color: var(--brand-white);
+    border: 1px solid var(--brand-navy);
+}
+
+.cookie-banner__btn--accept:hover {
+    background-color: var(--brand-gold);
+    border-color: var(--brand-gold);
+}
+
+.cookie-banner__btn--decline {
+    background-color: transparent;
+    color: var(--brand-navy);
+    border: 1px solid rgba(29, 39, 54, 0.2);
+}
+
+.cookie-banner__btn--decline:hover {
+    background-color: rgba(29, 39, 54, 0.05);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(0); }
+    to { transform: translateY(100%); }
 }
