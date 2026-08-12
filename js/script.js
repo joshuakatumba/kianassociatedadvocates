@@ -439,8 +439,8 @@ function bindContactForm() {
                 .then(() => {
                     showToast(
                         'success',
-                        'Message Sent Successfully!',
-                        'Thank you for reaching out. Our team will get back to you within 24 hours.'
+                        'Appointment Request Sent!',
+                        'Thank you for choosing Kian Associated Advocates. Our team will contact you shortly to confirm your booking.'
                     );
                     contactForm.reset();
                     if (btnLabel) btnLabel.innerText = originalText;

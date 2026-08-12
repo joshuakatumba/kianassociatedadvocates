@@ -54,6 +54,7 @@ body,
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    animation: fadeIn 0.15s ease-out;
 }
 
 ::selection {
@@ -993,14 +994,14 @@ h6 {
 .hero-section__media-image {
     width: 100%;
     height: 280px;
-    object-fit: contain;
-    object-position: center bottom;
+    object-fit: cover;
+    object-position: right center;
 }
 
 @media (min-width: 768px) {
     .hero-section__media-image {
         height: 100%;
-        object-position: right bottom;
+        object-position: center;
     }
 }
 
@@ -3321,13 +3322,13 @@ h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.4;
+    opacity: 0.7;
 }
 
 .sector-hero__bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, var(--brand-navy), rgba(29, 39, 54, 0.85), transparent);
+    /* background: linear-gradient(to right, rgba(29, 39, 54, 0.1), rgba(50, 62, 80, 0.4), transparent); */
 }
 
 .sector-hero__inner {
@@ -3369,6 +3370,8 @@ h6 {
 .sector-content-area {
     padding-top: 3rem;
     padding-bottom: 5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     max-width: 56rem;
     margin-left: auto;
     margin-right: auto;
@@ -3951,11 +3954,30 @@ h6 {
 }
 
 @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideDown {
-    from { transform: translateY(0); }
-    to { transform: translateY(100%); }
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
