@@ -416,11 +416,6 @@ function bindContactForm() {
     const contactForm = document.getElementById('contact-form');
 
     if (contactForm) {
-        // Initialize EmailJS
-        if (typeof emailjs !== 'undefined') {
-            emailjs.init("F0fdWC6WNW1TkrSA1");
-        }
-
         contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
@@ -434,28 +429,45 @@ function bindContactForm() {
             if (btnIcon) btnIcon.style.display = 'none';
             submitBtn.disabled = true;
 
-            // Send the form using the provided Service ID and Template ID
-            emailjs.sendForm('service_wnh7o0q', 'template_gwuni8g', this)
-                .then(() => {
-                    showToast(
-                        'success',
-                        'Appointment Request Sent!',
-                        'Thank you for choosing Kian Associated Advocates. Our team will contact you shortly to confirm your booking.'
-                    );
-                    contactForm.reset();
-                    if (btnLabel) btnLabel.innerText = originalText;
-                    if (btnIcon) btnIcon.style.display = '';
-                    submitBtn.disabled = false;
-                }, (error) => {
-                    showToast(
-                        'error',
-                        'Message Failed to Send',
-                        'Something went wrong. Please try again later or contact us directly by phone.'
-                    );
-                    if (btnLabel) btnLabel.innerText = originalText;
-                    if (btnIcon) btnIcon.style.display = '';
-                    submitBtn.disabled = false;
-                });
+            const resetFormState = () => {
+                if (btnLabel) btnLabel.innerText = originalText;
+                if (btnIcon) btnIcon.style.display = '';
+                submitBtn.disabled = false;
+            };
+
+            try {
+                // Send the form using the provided Service ID and Template ID
+                emailjs.sendForm('service_wnh7o0q', 'template_gwuni8g', contactForm, {
+                    publicKey: 'F0fdWC6WNW1TkrSA1'
+                })
+                    .then(() => {
+                        showToast(
+                            'success',
+                            'Appointment Request Sent!',
+                            'Thank you for choosing Kian Associated Advocates. Our team will contact you shortly to confirm your booking.'
+                        );
+                        contactForm.reset();
+                        resetFormState();
+                    })
+                    .catch((error) => {
+                        console.error('EmailJS Error:', error);
+                        const errorMsg = error && error.text ? error.text : (error.message || JSON.stringify(error));
+                        showToast(
+                            'error',
+                            'Message Failed to Send',
+                            `Error: ${errorMsg}`
+                        );
+                        resetFormState();
+                    });
+            } catch (error) {
+                console.error('EmailJS Sync Error:', error);
+                showToast(
+                    'error',
+                    'Message Failed to Send',
+                    `Sync Error: ${error.message || error}`
+                );
+                resetFormState();
+            }
         });
     }
 }
