@@ -3059,7 +3059,7 @@ h6 {
 
 @media (min-width: 1024px) {
     .site-footer__middle {
-        grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 2.5fr;
+        grid-template-columns: 2.5fr 1.5fr 1.5fr 2fr;
         gap: 2rem;
     }
 }
@@ -3978,5 +3978,183 @@ h6 {
 
     to {
         opacity: 1;
+    }
+}
+/* ==========================
+   BLOG MODAL & CARD ANIMATIONS
+   ========================== */
+.split-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.split-card:hover .split-card__image {
+    transform: scale(1.05);
+}
+
+.split-card__image {
+    transition: transform 0.5s ease;
+}
+
+.split-card__read-more {
+    margin-top: 2rem;
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--brand-navy);
+    background: transparent;
+    color: var(--brand-navy);
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.split-card:hover .split-card__read-more {
+    background: var(--brand-navy);
+    color: white;
+}
+
+/* Modal Styles */
+.blog-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(28, 43, 57, 0.85); /* brand-navy with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(4px);
+    padding: 1rem;
+}
+
+.blog-modal.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.blog-modal__content-box {
+    background: #fff;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 12px;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Scrollbar for Modal */
+.blog-modal__content-box::-webkit-scrollbar {
+    width: 6px;
+}
+.blog-modal__content-box::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 0 12px 12px 0;
+}
+.blog-modal__content-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 6px;
+}
+.blog-modal__content-box::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.blog-modal.is-active .blog-modal__content-box {
+    transform: translateY(0);
+}
+
+.blog-modal__close {
+    position: sticky;
+    top: 1rem;
+    right: 1rem;
+    align-self: flex-end;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    flex-shrink: 0; /* Prevents button from being squished into an oval */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+    margin-bottom: -40px;
+    margin-right: 1rem;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.blog-modal__close:hover {
+    background: #f1f5f9;
+    transform: scale(1.05);
+}
+
+.blog-modal__hero {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.blog-modal__body {
+    padding: 2rem 3rem 3rem 3rem;
+}
+
+.blog-modal__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-modal__tag {
+    background-color: var(--brand-gold);
+    color: #fff;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.blog-modal__date {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.blog-modal__title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--brand-navy);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.blog-modal__text {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 1.5rem;
+}
+
+.blog-modal__text p {
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .blog-modal__body {
+        padding: 1.5rem;
+    }
+    
+    .blog-modal__title {
+        font-size: 2rem;
     }
 }

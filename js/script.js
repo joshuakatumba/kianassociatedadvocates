@@ -257,7 +257,25 @@ function toggleMobileNavAccordion(clickedPanel) {
  * Initializes form validation and dynamic behavior across the application.
  */
 function initializeFormHandlers() {
-    // Form handling logic for contact and appointment forms can be attached here.
+    // Newsletter Subscription Form Logic
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = newsletterForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = 'Subscribing...';
+            btn.disabled = true;
+
+            // Simulate network request
+            setTimeout(() => {
+                showToast('success', 'Subscribed!', 'Thank you for subscribing to our newsletter. You will receive our latest updates soon.');
+                newsletterForm.reset();
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }, 1200);
+        });
+    }
 }
 
 
@@ -334,6 +352,7 @@ function initializeSite() {
     bindContactForm();
     initializeCookieBanner();
     initializeFlatpickr();
+    initializeBlogModal();
 }
 
 // Bootstrap application on DOM ready
@@ -436,31 +455,42 @@ function bindContactForm() {
             };
 
             try {
-                // Send the form using the provided Service ID and Template ID
-                emailjs.sendForm('service_wnh7o0q', 'template_gwuni8g', contactForm, {
-                    publicKey: 'F0fdWC6WNW1TkrSA1'
+                // Send the form using native fetch to bypass SDK issues
+                const formData = new FormData(contactForm);
+                formData.append('service_id', 'service_wnh7o0q');
+                formData.append('template_id', 'template_gwuni8g');
+                formData.append('user_id', 'F0fdWC6WNW1TkrSA1');
+
+                fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
+                    method: 'POST',
+                    body: formData
                 })
-                    .then(() => {
-                        showToast(
-                            'success',
-                            'Appointment Request Sent!',
-                            'Thank you for choosing Kian Associated Advocates. Our team will contact you shortly to confirm your booking.'
-                        );
-                        contactForm.reset();
-                        resetFormState();
+                    .then(response => {
+                        if (response.ok) {
+                            showToast(
+                                'success',
+                                'Appointment Request Sent!',
+                                'Thank you for choosing Kian Associated Advocates. Our team will contact you shortly to confirm your booking.'
+                            );
+                            contactForm.reset();
+                            resetFormState();
+                        } else {
+                            return response.text().then(text => {
+                                throw new Error(text || 'Failed to send message');
+                            });
+                        }
                     })
                     .catch((error) => {
                         console.error('EmailJS Error:', error);
-                        const errorMsg = error && error.text ? error.text : (error.message || JSON.stringify(error));
                         showToast(
                             'error',
                             'Message Failed to Send',
-                            `Error: ${errorMsg}`
+                            `Error: ${error.message || error}`
                         );
                         resetFormState();
                     });
             } catch (error) {
-                console.error('EmailJS Sync Error:', error);
+                console.error('Form Sync Error:', error);
                 showToast(
                     'error',
                     'Message Failed to Send',
@@ -481,14 +511,14 @@ function initializeFlatpickr() {
     if (typeof flatpickr !== 'undefined') {
         const dateInput = document.querySelector('.flatpickr-date');
         const timeInput = document.querySelector('.flatpickr-time');
-        
+
         if (dateInput) {
             flatpickr(dateInput, {
                 dateFormat: "m/d/Y",
                 minDate: "today"
             });
         }
-        
+
         if (timeInput) {
             flatpickr(timeInput, {
                 enableTime: true,
@@ -533,5 +563,104 @@ function initializeCookieBanner() {
         localStorage.setItem('kian_cookie_consent', 'declined');
         banner.classList.add('cookie-banner--hiding');
         setTimeout(() => banner.remove(), 300);
+    });
+}
+
+/* ==========================
+   Blog Modal Handling
+   ========================== */
+
+function initializeBlogModal() {
+    const readMoreBtns = document.querySelectorAll('.split-card__read-more');
+    if (readMoreBtns.length === 0) return;
+
+    // Inject Modal HTML
+    const modalHTML = `
+        <div class="blog-modal" id="blog-modal">
+            <div class="blog-modal__content-box">
+                <button class="blog-modal__close" id="blog-modal-close" aria-label="Close modal">
+                    <i data-lucide="x"></i>
+                </button>
+                <img src="" alt="Blog Cover" class="blog-modal__hero" id="blog-modal-img">
+                <div class="blog-modal__body">
+                    <div class="blog-modal__meta">
+                        <span class="blog-modal__date" id="blog-modal-date"></span>
+                        <span class="blog-modal__tag" id="blog-modal-tag"></span>
+                    </div>
+                    <h2 class="blog-modal__title" id="blog-modal-title"></h2>
+                    <div class="blog-modal__text" id="blog-modal-text"></div>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    if (typeof lucide !== 'undefined') {
+        try {
+            lucide.createIcons();
+        } catch (e) {
+            console.error("Lucide error in modal:", e);
+        }
+    }
+
+    const modal = document.getElementById('blog-modal');
+    const closeBtn = document.getElementById('blog-modal-close');
+
+    const modalImg = document.getElementById('blog-modal-img');
+    const modalDate = document.getElementById('blog-modal-date');
+    const modalTag = document.getElementById('blog-modal-tag');
+    const modalTitle = document.getElementById('blog-modal-title');
+    const modalText = document.getElementById('blog-modal-text');
+
+    function openModal(card) {
+        const title = card.querySelector('.split-card__title').innerText;
+        const date = card.querySelector('.split-card__date').innerText;
+        const tag = card.querySelector('.split-card__tag').innerText;
+        const imgSrc = card.querySelector('.split-card__image').src;
+        const fullContent = card.querySelector('.split-card__full-content').innerHTML;
+
+        modalTitle.innerText = title;
+        modalDate.innerText = date;
+        modalTag.innerText = tag;
+        modalImg.src = imgSrc;
+        modalText.innerHTML = fullContent;
+
+        modal.classList.add('is-active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-active');
+        document.body.style.overflow = ''; // Restore background scrolling
+    }
+
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // prevent other click handlers from interfering
+            try {
+                const card = e.target.closest('.split-card');
+                if (!card) {
+                    alert("Card not found!");
+                    return;
+                }
+                openModal(card);
+            } catch (err) {
+                alert("Error opening modal: " + err.message);
+                console.error(err);
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+            closeModal();
+        }
     });
 }
