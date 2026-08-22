@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-<body>
-    <form id="contact-form">
-        <input type="text" name="user_firstname" value="Test">
-        <input type="email" name="user_email" value="test@example.com">
-    </form>
-    <script>
-        const form = document.getElementById('contact-form');
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contact-form');
+    if (form) {
         const formData = new FormData(form);
         formData.append('service_id', 'service_wnh7o0q');
         formData.append('template_id', 'template_gwuni8g');
@@ -19,6 +13,5 @@
             console.log(res.status, res.statusText);
             return res.text();
         }).then(text => console.log(text));
-    </script>
-</body>
-</html>
+    }
+});
