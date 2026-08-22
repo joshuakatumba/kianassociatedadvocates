@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        window.onload = function() {
+            emailjs.init({
+              publicKey: "F0fdWC6WNW1TkrSA1",
+            });
+            console.log("Initialized");
+            emailjs.send("service_wnh7o0q", "template_gwuni8g", {
+                user_firstname: "Test",
+                user_email: "test@example.com"
+            }).then(function(response) {
+                console.log("SUCCESS!", response.status, response.text);
+            }, function(error) {
+                console.log("FAILED...", error);
+            });
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
