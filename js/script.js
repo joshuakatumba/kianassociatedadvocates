@@ -336,6 +336,14 @@ function initializeExpandedAccordions() {
     });
 }
 
+function initializeCopyrightYear() {
+    const yearSpans = document.querySelectorAll('#copyright-year, .copyright-year');
+    const currentYear = new Date().getFullYear();
+    yearSpans.forEach(span => {
+        span.textContent = currentYear;
+    });
+}
+
 /**
  * Bootstraps all dynamic interactive features after the DOM is fully loaded.
  */
@@ -353,6 +361,7 @@ function initializeSite() {
     initializeCookieBanner();
     initializeFlatpickr();
     initializeBlogModal();
+    initializeCopyrightYear();
 }
 
 // Bootstrap application on DOM ready

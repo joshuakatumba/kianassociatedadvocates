@@ -9,14 +9,22 @@
    ========================== */
 
 :root {
-    /* Color Palette Tokens */
-    --brand-navy: #1d2736;
-    --brand-gold: #d9a036;
-    --brand-bg: #f3f1eb;
-    --brand-gray: #6b7280;
-    --brand-dark-navy: #192230;
+    /* Rebrand Semantic Colors - 80% Saturation */
+    --color-text-main: hsl(170, 80%, 11.4%);
+    --color-text-small: hsl(168, 86%, 19%);
+    --color-heading: hsl(169, 80%, 34.9%);
+    --color-footer: hsl(171, 92%, 10%);
+    --color-link: hsl(169, 98%, 22%);
+    --color-btn-hover: hsl(171, 92%, 10%);
+
+    /* Legacy Token Mappings */
+    --brand-navy: var(--color-text-main);
+    --brand-gold: var(--color-link);
+    --brand-bg: #ffffff;
+    --brand-gray: var(--color-text-small);
+    --brand-dark-navy: var(--color-footer);
     --brand-light-gray: #f9f8f6;
-    --brand-dark-bg: #1f2937;
+    --brand-dark-bg: var(--color-footer);
     --brand-white: #ffffff;
 
     /* Typography Tokens */
@@ -49,12 +57,13 @@ html {
 body,
 .site-body {
     background-color: var(--brand-bg);
-    color: #333333;
+    color: var(--color-text-main);
     font-family: var(--font-sans);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     animation: fadeIn 0.15s ease-out;
+    overflow-x: hidden;
 }
 
 ::selection {
@@ -100,7 +109,7 @@ h4,
 h5,
 h6 {
     font-family: var(--font-serif);
-    color: var(--brand-navy);
+    color: var(--color-heading);
     line-height: 1.25;
 }
 
@@ -532,7 +541,7 @@ h6 {
     display: none;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--brand-gold);
+    background-color: var(--color-heading);
     color: var(--brand-white);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius-full);
@@ -545,7 +554,7 @@ h6 {
 }
 
 .site-header__cta:hover {
-    background-color: var(--brand-navy);
+    background-color: var(--color-btn-hover);
     color: var(--brand-white);
 }
 
@@ -600,7 +609,7 @@ h6 {
 }
 
 .site-logo__emblem {
-    height: 2rem;
+    height: 3.5rem;
     width: auto;
     object-fit: contain;
 }
@@ -2192,7 +2201,7 @@ h6 {
 /* Global Primary Button */
 .btn-primary {
     display: inline-block;
-    background-color: var(--brand-navy);
+    background-color: var(--color-heading);
     color: var(--brand-white);
     padding: 0.75rem 2.5rem;
     font-size: 0.95rem;
@@ -2201,7 +2210,7 @@ h6 {
 }
 
 .btn-primary:hover {
-    background-color: var(--brand-gold);
+    background-color: var(--color-btn-hover);
 }
 
 /* Partnership Section */
@@ -2999,7 +3008,7 @@ h6 {
 .site-footer {
     position: relative;
     width: 100%;
-    background-color: #172435;
+    background-color: var(--color-footer);
     margin-top: auto;
     color: var(--brand-white);
     font-size: 0.875rem;
@@ -3143,13 +3152,17 @@ h6 {
     color: #9ca3af;
 }
 
+.site-footer .site-logo__emblem {
+    filter: brightness(0) invert(1);
+}
+
 .site-footer .site-logo__text {
     color: var(--brand-white);
     font-size: 1.5rem;
 }
 
 .site-footer .site-logo__tagline {
-    color: var(--brand-gold);
+    color: var(--brand-white);
 }
 
 /* Mobile Nav Overlay Header & Links */
@@ -3980,6 +3993,7 @@ h6 {
         opacity: 1;
     }
 }
+
 /* ==========================
    BLOG MODAL & CARD ANIMATIONS
    ========================== */
@@ -4018,7 +4032,8 @@ h6 {
 .blog-modal {
     position: fixed;
     inset: 0;
-    background: rgba(28, 43, 57, 0.85); /* brand-navy with opacity */
+    background: rgba(28, 43, 57, 0.85);
+    /* brand-navy with opacity */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4054,14 +4069,17 @@ h6 {
 .blog-modal__content-box::-webkit-scrollbar {
     width: 6px;
 }
+
 .blog-modal__content-box::-webkit-scrollbar-track {
     background: #f1f5f9;
     border-radius: 0 12px 12px 0;
 }
+
 .blog-modal__content-box::-webkit-scrollbar-thumb {
     background: #cbd5e1;
     border-radius: 6px;
 }
+
 .blog-modal__content-box::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
 }
@@ -4080,13 +4098,14 @@ h6 {
     width: 40px;
     height: 40px;
     padding: 0;
-    flex-shrink: 0; /* Prevents button from being squished into an oval */
+    flex-shrink: 0;
+    /* Prevents button from being squished into an oval */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;
     margin-bottom: -40px;
     margin-right: 1rem;
@@ -4153,7 +4172,7 @@ h6 {
     .blog-modal__body {
         padding: 1.5rem;
     }
-    
+
     .blog-modal__title {
         font-size: 2rem;
     }
