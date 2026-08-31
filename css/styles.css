@@ -15,7 +15,8 @@
     --color-heading: hsl(169, 80%, 34.9%);
     --color-footer: hsl(171, 92%, 10%);
     --color-link: hsl(169, 98%, 22%);
-    --color-btn-hover: hsl(171, 92%, 10%);
+    --color-btn-bg: #023029;
+    --color-btn-hover: #12a086;
 
     /* Legacy Token Mappings */
     --brand-navy: var(--color-text-main);
@@ -541,7 +542,7 @@ h6 {
     display: none;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--color-heading);
+    background-color: var(--color-btn-bg);
     color: var(--brand-white);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius-full);
@@ -550,7 +551,6 @@ h6 {
     white-space: nowrap;
     flex-shrink: 0;
     transition: background-color var(--transition-fast), color var(--transition-fast);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .site-header__cta:hover {
@@ -1052,21 +1052,30 @@ h6 {
 }
 
 .hero-section__cta {
-    display: inline-block;
-    background-color: var(--brand-navy);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-btn-bg);
     color: var(--brand-white);
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: background-color var(--transition-fast);
+    padding: 0.85rem 2.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 1px solid transparent;
 }
 
 .hero-section__cta:hover {
-    background-color: var(--brand-gold);
+    background-color: var(--color-btn-hover);
+    color: var(--brand-white);
 }
 
 
 /* Subpage Hero Banners */
+.breadcrumb-nav {
+    display: none !important;
+}
 .subpage-hero {
     position: relative;
     width: 100%;
@@ -1334,14 +1343,14 @@ h6 {
     align-items: center;
     justify-content: center;
     gap: 0.625rem;
-    background-color: var(--brand-navy);
+    background-color: var(--color-btn-bg);
     color: var(--brand-white);
     padding: 0.875rem 2.5rem;
     font-size: 0.95rem;
     font-weight: 600;
     font-family: var(--font-sans);
     letter-spacing: 0.03em;
-    border: 2px solid var(--brand-navy);
+    border: 2px solid var(--color-btn-bg);
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1353,7 +1362,7 @@ h6 {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--brand-gold);
+    background-color: var(--color-btn-hover);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1366,7 +1375,7 @@ h6 {
 }
 
 .contact-form__submit:hover {
-    border-color: var(--brand-gold);
+    border-color: var(--color-btn-hover);
 }
 
 .contact-form__submit span,
@@ -2188,7 +2197,7 @@ h6 {
 }
 
 .about-section__text {
-    color: var(--brand-navy);
+    color: #5a553e; /* Darker shade for better visibility */
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
     line-height: 1.7;
@@ -2200,17 +2209,23 @@ h6 {
 
 /* Global Primary Button */
 .btn-primary {
-    display: inline-block;
-    background-color: var(--color-heading);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-btn-bg);
     color: var(--brand-white);
-    padding: 0.75rem 2.5rem;
+    padding: 0.85rem 2.25rem;
     font-size: 0.95rem;
-    font-weight: 500;
-    transition: background-color var(--transition-fast);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 1px solid transparent;
 }
 
 .btn-primary:hover {
     background-color: var(--color-btn-hover);
+    color: var(--brand-white);
 }
 
 /* Partnership Section */
@@ -2501,20 +2516,23 @@ h6 {
 }
 
 .cta-section__button {
-    display: inline-block;
-    background-color: var(--brand-gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-btn-bg);
     color: var(--brand-white);
-    padding: 0.75rem 2rem;
+    padding: 0.85rem 2.25rem;
     border-radius: var(--border-radius-sm);
     font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: opacity var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .cta-section__button:hover {
-    opacity: 0.9;
+    background-color: var(--color-btn-hover);
+    color: var(--brand-white);
 }
 
 /* Case Studies Section */
@@ -2985,7 +3003,7 @@ h6 {
 }
 
 .blog-card__btn {
-    background-color: var(--brand-navy);
+    background-color: var(--color-btn-bg);
     color: var(--brand-white);
     padding: 0.75rem 2rem;
     font-weight: 600;
@@ -2993,11 +3011,12 @@ h6 {
     border: none;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .blog-card__btn:hover {
-    background-color: #111a26;
+    background-color: var(--color-btn-hover);
+    color: var(--brand-white);
 }
 
 .blog-card__link:hover {
